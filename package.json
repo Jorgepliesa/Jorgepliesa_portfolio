@@ -1,12 +1,12 @@
 {
-  "name": "alvalen-portfolio-website",
+  "name": "jorgepliesa-portfolio",
   "author": {
-    "name": "Alvalen Shafelbilyunazra",
-    "email": "alvalen.shafel04@gmail.com",
-    "url": "https://alvalens.my.id"
+    "name": "Jorge Pérez Liesa",
+    "email": "jorgepliesa@gmail.com",
+    "url": "https://jorgepliesa-portfolio.vercel.app/"
   },
-  "license": "GPL-3.0",
-  "copyright": "Copyright (C) 2025 Alvalen Shafelbilyunazra",
+  "license": "MIT",
+  "copyright": "Copyright (C) 2026 Jorge Pérez Liesa",
   "version": "1.0.0",
   "private": true,
   "scripts": {

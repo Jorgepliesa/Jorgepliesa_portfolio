@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 const navVariant = {
 	open: {
@@ -48,6 +49,7 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 	const handleItemClick = () => {
 		setIsNavOpen(false);
 	};
+	const { t, language, toggleLanguage } = useLanguage();
 
 	return (
 		<>
@@ -56,14 +58,14 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 				variants={navVariant}
 				animate={isNavOpen ? "open" : "closed"}
 				initial={false}>
-				<div className="relative opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-gray-700 min-w-[100vw] ">
+				<div className="relative opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] min-w-[100vw]" style={{background: 'linear-gradient(180deg, rgba(10,10,10,0.9), rgba(5,5,7,0.95))', boxShadow: 'inset 0 0 80px rgba(57,255,20,0.02)'}}>
 					<div className="flex flex-col items-center space-y-8 my-auto mx-0 z-50">
 						{/* title */}
 						<motion.h1
 							variants={itemVariants}
 							animate={isNavOpen ? "open" : "closed"}
 							className="text-6xl font-bold text-white ">
-							Menu
+							{t('nav.menu')}
 						</motion.h1>
 						<Link href="/#home">
 							<div
@@ -74,7 +76,7 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.1}>
-									Home
+									{t('nav.home')}
 								</motion.h2>
 							</div>
 						</Link>
@@ -87,7 +89,7 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.2}>
-									About
+									{t('nav.about')}
 								</motion.h2>
 							</div>
 						</Link>
@@ -100,7 +102,7 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.3}>
-									Projects
+									{t('nav.projects')}
 								</motion.h2>
 							</div>
 						</Link>
@@ -113,10 +115,21 @@ const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 									variants={itemVariants}
 									animate={isNavOpen ? "open" : "closed"}
 									custom={0.4}>
-									Contact
+									{t('nav.contact')}
 								</motion.h2>
 							</div>
 						</Link>
+						
+						{/* Language Switcher */}
+						<motion.button
+							onClick={toggleLanguage}
+							variants={itemVariants}
+							animate={isNavOpen ? "open" : "closed"}
+							custom={0.5}
+							className="mt-8 px-6 py-2 border-2 border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-black transition-colors rounded-full font-bold"
+						>
+							{language === 'en' ? 'ESPAÑOL' : 'ENGLISH'}
+						</motion.button>
 					</div>
 				</div>
 			</motion.div>
@@ -134,34 +147,31 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav
+				<nav
 				ref={navRef}
 				className={`navbar px-5 md:px-24 w-screen fixed transition-colors ease duration-500 ${
 					isNavOpen
-						? "backdrop-filter backdrop-blur-md bg-gray-700 bg-opacity-50"
-						: "backdrop-filter backdrop-blur-md"
-				} inset-0  bg-opacity-50 flex flex-row justify-between items-center h-16 z-50 `}>
+						? "glass-weak"
+						: ""
+				} inset-0 flex flex-row justify-between items-center h-16 z-50 `} style={{backgroundColor: 'transparent'}}>
 				<div>
-					<h1
-						className={`text-2xl ml-2 md:ml-0 transition-colors ease duration-500 ${
-							isNavOpen ? "text-white" : ""
-						}`}>
-						Alvalens
-					</h1>
+						<h1
+							className={`text-2xl ml-2 md:ml-0 transition-colors ease duration-500 neon`}>
+							Jorgepliesa
+						</h1>
 				</div>
 				<div className="flex flex-row items-center">
 					<button
 						aria-label={isNavOpen ? "Close menu" : "Open menu"}
-						className="burger button flex flex-col justify-center items-center space-y-1.5 "
+							className="burger button flex flex-col justify-center items-center space-y-1.5 "
 						onClick={toggleNav}>
 						<div
-							className={`w-10 h-1 bg-black rounded-full transition-all ease duration-300 ${
-								isNavOpen ? "rotate-45   bg-white translate-y-[2px]" : ""
-							}`}></div>
-						<div
-							className={`w-10 h-1 bg-black rounded-full transition-all ease duration-300 ${
-								isNavOpen ? "-rotate-45 -translate-y-2 bg-white" : ""
-							}`}></div>
+								className={`w-10 h-1 rounded-full transition-all ease duration-300 ${
+									isNavOpen ? "rotate-45 translate-y-[2px] bg-[var(--color-accent)] shadow-[0_0_12px_rgba(57,255,20,0.6)]" : "bg-[var(--color-fg)] shadow-[0_0_8px_rgba(57,255,20,0.25)]"
+								}`} />
+							<div className={`w-10 h-1 rounded-full transition-all ease duration-300 ${
+									isNavOpen ? "-rotate-45 -translate-y-2 bg-[var(--color-accent)] shadow-[0_0_12px_rgba(57,255,20,0.6)]" : "bg-[var(--color-fg)] shadow-[0_0_8px_rgba(57,255,20,0.25)]"
+								}`} />
 					</button>
 				</div>
 			</nav>

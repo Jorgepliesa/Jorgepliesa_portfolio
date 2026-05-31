@@ -20,7 +20,7 @@ const Sidebar = () => {
 	const { moveTo, activeIndex } = useFullPage();
 
 	return (
-		<div className="hidden md:flex fixed z-40 bg-gray-700 h-[50vh] w-14 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl">
+		<div className="hidden md:flex fixed z-40 h-[50vh] w-14 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl glass-weak" style={{backgroundColor: 'rgba(255,255,255,0.02)'}}>
 			<ul
 				id="sidebar"
 				className="flex flex-col justify-evenly items-center h-full text-gray-50">

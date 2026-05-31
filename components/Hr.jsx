@@ -6,7 +6,7 @@ export default function Hr({ variant }) {
 			{variant === "long" ? (
 				<>
 					<motion.div
-						className="bg-gray-700 w-28 h-1 rounded-full mb-3 self-start"
+						className="w-28 h-1 rounded-full mb-3 self-start" style={{background: 'linear-gradient(90deg, rgba(57,255,20,0.95), rgba(191,255,209,0.6))'}}
 						initial={{
 							opacity: 0,
 							x: -100,
@@ -20,7 +20,7 @@ export default function Hr({ variant }) {
 							type: "spring",
 						}}></motion.div>
 					<motion.div
-						className="bg-gray-700 w-28 h-1 rounded-full"
+						className="w-28 h-1 rounded-full" style={{background: 'linear-gradient(90deg, rgba(57,255,20,0.95), rgba(191,255,209,0.6))'}}
 						initial={{
 							opacity: 0,
 							x: 200,
@@ -37,7 +37,7 @@ export default function Hr({ variant }) {
 			) : (
 				<div className="flex justify-center items-center flex-col my-5">
 					<motion.div
-						className="bg-gray-700 w-20 h-1 rounded-full mb-2"
+						className="w-20 h-1 rounded-full mb-2" style={{background: 'linear-gradient(90deg, rgba(57,255,20,0.95), rgba(191,255,209,0.6))'}}
 						initial={{
 							opacity: 0,
 							x: -45,
@@ -51,7 +51,7 @@ export default function Hr({ variant }) {
 							type: "spring",
 						}}></motion.div>
 					<motion.div
-						className="bg-gray-700 w-20 h-1 rounded-full"
+						className="w-20 h-1 rounded-full" style={{background: 'linear-gradient(90deg, rgba(57,255,20,0.95), rgba(191,255,209,0.6))'}}
 						initial={{
 							opacity: 0,
 							x: 150,

@@ -1,61 +1,55 @@
 import "./globals.css";
-import { Poppins, Jost } from "next/font/google";
+import { Fira_Code, Space_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 import { Analytics } from "@vercel/analytics/react";
-import Chat from "@/components/Chat";
 import ClientTopProgressBar from "@/components/ClientTopProgressBar";
+import { LanguageProvider } from "@/context/LanguageContext";
 
-const poppins = Poppins({
+const firaCode = Fira_Code({
 	subsets: ["latin"],
 	weight: ["300", "400", "500", "600", "700"],
-	style: ["normal", "italic"],
 	display: "swap",
 	variable: "--font-poppins",
 });
 
-const jost = Jost({
+const spaceMono = Space_Mono({
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
+	weight: ["400", "700"],
 	display: "swap",
-	variable: "--font-jost",
+	variable: "--font-jost", 
 });
 
 export const metadata = {
-	metadataBase: new URL("https://www.alvalens.my.id"),
-	title: "Alvalens | Portofolio",
+	metadataBase: new URL("https://jorgepliesa-portfolio.vercel.app/"),
+	title: "Jorge Pérez Liesa | Portofolio",
 
 	description:
-		"Alvalen, Product-Minded Software Engineer specializing in Next.js, Spring Boot, and AI Solutions. Founder & CTO of Intervyou.",
-
-	author: "Alvalen Shafelbilyunazra",
-	siteUrl: "https://www.alvalens.my.id",
-	applicationName: "Alvalens",
+		"Jorge, Computer Engineer with experience in Full Stack and software development. Passionate about video game design and software architecture (C++, Java, React, SQL, Python, NestJS, etc.).",
+	author: "Jorge Pérez Liesa",
+	siteUrl: "https://jorgepliesa-portfolio.vercel.app/",
+	applicationName: "Jorge Pérez Liesa",
 
 	keywords: [
-		"alvalens",
-		"alvalen",
-		"alvalen shafel",
-		"shafel",
-		"alvalen shafelbilyunazra",
-		"alvalen shafel bilyunazra",
+		"jorge",
+		"jorge perez liesa",
 		"bloodfallen",
-		"alvalen porto",
-		"alvalen um",
+		"jorge perez",
+		"jorgepliesa",
 	],
 
 	openGraph: {
 		type: "website",
-		url: "https://www.alvalens.my.id",
-		title: "Alvalens | Portofolio",
-		siteName: "Alvalens | Portofolio",
-		description: "My name is Alvalens, This is my portofolio website.",
+		url: "https://jorgepliesa-portfolio.vercel.app/",
+		title: "Jorge Pérez Liesa | Portofolio",
+		siteName: "Jorge Pérez Liesa | Portofolio",
+		description: "My name is Jorge Pérez Liesa, This is my portofolio website.",
 		images: [
 			{
 				url: "/og-image-rev.png",
-				alt: "Alvalens Portofolio",
+				alt: "Jorge Pérez Liesa Portofolio",
 				width: 1200,
 				height: 630,
 			},
@@ -66,9 +60,9 @@ export const metadata = {
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "Person",
-	name: "Alvalen Shafelbilyunazra",
-	url: "https://www.alvalens.my.id",
-	jobTitle: "Full Stack Software Engineer",
+	name: "Jorge Pérez Liesa",
+	url: "https://jorgepliesa-portfolio.vercel.app/",
+	jobTitle: "Computer Engineer",
 	worksFor: [
 		{ "@type": "Organization", name: "MGG Software" },
 		{ "@type": "Organization", name: "Intervyou" },
@@ -78,24 +72,24 @@ const jsonLd = {
 		name: "Universitas Negeri Malang",
 	},
 	sameAs: [
-		"https://github.com/Alvalens",
-		"https://www.linkedin.com/in/alvalen-shafel-8a081a254/",
-		"https://www.instagram.com/alvalens_/",
+		"https://github.com/jorgepliesa",
+		"https://www.linkedin.com/in/jorgeperezliesa/",
 	],
 };
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className={`${poppins.variable} ${jost.variable}`}>
+		<html lang="en" className={`${firaCode.variable} ${spaceMono.variable}`}>
 			<body>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
-				<ClientTopProgressBar />
-				<Navbar />
-				{children}
-				<Chat />
+				<LanguageProvider>
+					<ClientTopProgressBar />
+					<Navbar />
+					{children}
+				</LanguageProvider>
 				<Analytics />
 			</body>
 		</html>

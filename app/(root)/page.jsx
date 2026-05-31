@@ -11,7 +11,7 @@ import { FullPageWrapper, Section, useFullPage } from "@alvalens/react-fullpage-
 
 // components
 import Button from "@/components/Button";
-import Me from "@/public/image/alvalen-front.webp";
+import Me from "@/public/image/me.jpg";
 import MeAbout from "@/public/image/me2.jpg";
 import Setup from "@/public/image/setup.jpg";
 import ProjectAll from "@/public/image/projects.png";
@@ -23,6 +23,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useLanguage } from "@/context/LanguageContext";
 
 function ScrollIndicator() {
 	const { activeIndex } = useFullPage();
@@ -63,6 +64,7 @@ function ScrollIndicator() {
 }
 
 const MyPage = () => {
+	const { t } = useLanguage();
 	return (
 		<FullPageWrapper>
 			<Section>
@@ -81,7 +83,7 @@ const MyPage = () => {
 									width={500}
 									height={500}
 									className="rounded-full w-full h-full object-cover "
-									alt="Alvalens"
+									alt="jorgepliesa"
 									placeholder="blur"
 								/>
 							</div>
@@ -94,7 +96,7 @@ const MyPage = () => {
 								delay: 0.2,
 								type: "spring",
 							}}>
-							Alvalen Shafel
+							Jorge Pérez Liesa
 						</motion.h3>
 						<motion.h1
 							className="text-black text-4xl md:text-6xl lg:text-6xl 2xl:text-8xl font-bold my-2 md:my-5"
@@ -104,22 +106,19 @@ const MyPage = () => {
 								delay: 0.3,
 								type: "spring",
 							}}>
-							Full Stack Software Engineer
+							Computer Engineer
+							<br/>
+							Software Developer
 						</motion.h1>
 						<motion.p
-							className="title text-md 2xl:text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem]"
+							className="title text-md 2xl:text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
 								delay: 0.4,
 								type: "spring",
 							}}>
-							Hi! I&rsquo;am Alvalen, A fullstack software
-							engineer specializing in modern Web Development with
-							a growing focus on Artificial Intelligence. I
-							architect scalable, production-ready engines—from
-							high-traffic Java microservices to RAG-powered SaaS
-							platforms.
+							{t('home.desc_1')} {t('home.desc_2')}
 						</motion.p>
 						<motion.div
 							className="buttons flex flex-row justify-center items-center space-x-4 mt-10"
@@ -135,11 +134,11 @@ const MyPage = () => {
 									target="_blank"
 									rel="noopener noreferrer"
 									download>
-									Download CV
+									{t('home.download_cv')}
 								</Link>
 							</Button>
 							<Button variation="secondary">
-								<a href="#contact">Contact Me</a>
+								<a href="#contact">{t('home.contact_me')}</a>
 							</Button>
 						</motion.div>
 					</motion.div>
@@ -157,7 +156,7 @@ const MyPage = () => {
 								width={400}
 								height={550}
 								placeholder="blur"
-								alt="Alvalens"
+								alt="jorgepliesa"
 								className="rounded-full w-full h-full object-cover"
 							/>
 						</div>
@@ -204,19 +203,18 @@ const MyPage = () => {
 								delay: 0.1,
 								type: "spring",
 							}}>
-							About Me
+							{t("home.about_me")}
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title  text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+							className="title  text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem] mb-5 max-w-[600px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
 								delay: 0.2,
 								type: "spring",
 							}}>
-							A brief introduction my journey as a software
-							engineer.
+							{t('home.desc_about_me')}
 						</motion.p>
 						<motion.div
 							initial={{ y: 40, opacity: 0 }}
@@ -272,7 +270,7 @@ const MyPage = () => {
 								delay: 0.1,
 								type: "spring",
 							}}>
-							My Projects
+							{t("home.my_projects")}
 						</motion.h1>
 						<Hr />
 						<motion.p

@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "EN"
+  },
+  "home": {
+    "hello": "Hello,",
+    "desc_1": "I am an enthusiastic Computer Engineer with a strong passion for Software Development.",
+    "desc_2": "I continuously strive to learn new technologies and apply them to build efficient, scalable solutions.",
+    "about_me": "About Me",
+    "desc_about_me": "Here is a brief introduction about myself, my skills, and my experience.",
+    "see_projects": "See Projects",
+    "my_projects": "My Projects",
+    "projects_desc": "I love creating robust software, web applications and games that are scalable, maintainable, and user-centric. Below are some highlights of my recent work.",
+    "more": "More",
+    "contact_me": "Contact Me",
+    "get_in_touch": "Let's Get in Touch",
+    "email": "Email",
+    "github": "Github",
+    "linkedin": "Linkedin",
+    "download_cv": "Download CV"
+  }
+}
