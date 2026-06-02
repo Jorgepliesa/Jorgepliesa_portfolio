@@ -15,13 +15,27 @@
     "desc_about_me": "Here is a brief introduction about myself, my skills, and my experience.",
     "see_projects": "See Projects",
     "my_projects": "My Projects",
-    "projects_desc": "I love creating robust software, web applications and games that are scalable, maintainable, and user-centric. Below are some highlights of my recent work.",
+    "desc_projects": "Projects that I have designed over the years and that I am currently working on.",
     "more": "More",
     "contact_me": "Contact Me",
-    "get_in_touch": "Let's Get in Touch",
+    "get_in_touch": "Get In Touch",
+    "desc_get_in_touch": "Feel free to contact me if you have any questions or want further info or just want to say hi.",
     "email": "Email",
     "github": "Github",
     "linkedin": "Linkedin",
     "download_cv": "Download CV"
+  },
+  "about": {
+    "about_me": "About Me",
+    "desc_about_me": "Here is a brief introduction about myself, my skills, and my experience.",
+    "title": "Who Am I?",
+    "desc_skills": "Explore my technical skills across different domains. Click on any category to see the specific technologies and tools I work with.",
+    "title_education" : "Get to know more about my educational background."
+  },
+  "projects" : {
+    "title": "My Projects",
+    "desc": "Projects that I have designed over the years and that I am currently working on.",
+    "see_more": "See more projects",
+    "more_projects": "Other Note Worthy Projects"
   }
 }

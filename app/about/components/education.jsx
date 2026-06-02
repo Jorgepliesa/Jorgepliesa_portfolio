@@ -10,9 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import Me4 from "@/public/image/me4.jpeg";
+import Napoli from "@/public/image/Napoli.jpg";
+import Me4 from "@/public/image/me4.jpg";
 import Me5 from "@/public/image/me5.jpg";
 import Me6 from "@/public/image/me6.jpg";
+import { useLanguage } from "@/context/LanguageContext";
 
 function Wrapper({ children }) {
 	return (
@@ -41,6 +43,7 @@ function Wrapper({ children }) {
 
 export default function Education() {
 	const [isExpanded, setIsExpanded] = useState(false);
+	const { t } = useLanguage();
 
 	const achievementsByYear = {
 		2025: [
@@ -154,7 +157,7 @@ export default function Education() {
 						Education
 					</h1>
 					<p className="text-muted-foreground max-w-[800px] mx-auto">
-						Get to know more about my educational background.
+						{t('about.title_education')}
 					</p>
 				</motion.div>
 				{/* Main Content */}
@@ -166,14 +169,14 @@ export default function Education() {
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}>
 						<div className="font-medium text-lg mb-4">
-							2022 - 2025
+							2020 - 2026
 						</div>
 						<div>
 							<h2 className="font-semibold text-xl">
-								Universitas Negeri Malang
+								Universidad de Zaragoza
 							</h2>
 							<h3 className="text-md font-normal mb-3">
-								S1 Teknik Informatika | Computer Science
+								Escuela de Ingeniería y Arquitectura (EINA) | Computer Engineering
 							</h3>
 							<div className="gap-4 mb-4 flex items-stretch md:h-[300px] xl:h-[400px]">
 								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
@@ -205,181 +208,110 @@ export default function Education() {
 								</div>
 							</div>
 							<div className="flex items-center gap-2">
-								<p className="text-gray-600 text-justify title text-lg">
-									I graduated as one of the{" "}
-									<span className="text-black font-medium">
-										Most Outstanding Students
+								<p className="text-gray-400 text-justify body text-lg">
+									I graduated with a Bachelor’s in{" "}
+									<span className="text-white font-medium">
+										Computer Engineering
 									</span>{" "}
-									from{" "}
-									<span className="text-black font-medium">
-										Universitas Negeri Malang
+									from the{" "}
+									<span className="text-white font-medium">
+										University of Zaragoza
 									</span>
-									, completing my Bachelor in{" "}
-									<span className="text-black font-medium">
-										Computer Science
+									, an institution widely recognized for its highly rigorous and demanding engineering curriculum. And specialized in Computing, which is related to maths, make optimal algorithms and so on. My academic journey was defined by a profound sense of{" "}
+									<span className="text-white font-medium">
+										dedication, resilience, and hard work
+									</span>
+									, turning complex technical challenges into milestones through relentless effort and perseverance.
+									<br />
+									<br />
+									A key highlight of my education was spending the 2023-2024 academic year abroad at the{" "}
+									<span className="text-white font-medium">
+										University of Campania Luigi Vanvitelli in Naples (Italy)
 									</span>{" "}
-									with a perfect GPA. My academic journey
-									was defined by a balance of rigorous
-									technical research and high-stakes
-									execution.
+									under the Erasmus program, an invaluable experience that expanded my adaptability and international perspective. 
 									<br />
 									<br />
-									As the{" "}
-									<span className="text-black font-medium">
-										Co-Lead of Google Developer Group on
-										Campus (GDGoC)
+									The pinnacle of my degree is my Bachelor’s Thesis (TFG): a fully functional, gamified cross-platform mobile application built with{" "}
+									<span className="text-white font-medium">
+										React Native and NestJS
 									</span>
-									, I spearheaded technical initiatives and
-									mentored a community of developers. Beyond
-									the classroom, I secured multiple national
-									and international honors, including being a{" "}
-									<span className="text-black font-medium">
-										two-time PIMNAS Finalist and an
-										Indonesia Inventor Day Gold Medalist
-									</span>
-									.
-									<br />
-									<br />
-									My education served as the engineering
-									foundation for my current work in{" "}
-									<span className="text-black font-medium">
-										Enterprise Architecture
-									</span>{" "}
-									and{" "}
-									<span className="text-black font-medium">
-										AI Implementation
-									</span>
-									. I remain committed to bridging academic
-									innovation with production-ready, scalable
-									software solutions.
+									. Developed to boost physical activity motivation in pediatric cancer survivors, this project allowed me to bridge deep technical execution with meaningful social impact. My education has provided me with a rock-solid engineering foundation, ready to be deployed into production-grade software solutions.
 								</p>
 							</div>
 							<div className="flex flex-wrap gap-2 mt-4 text-sm">
 								<div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-									GPA: 4 out of 4
+									{/*GPA: 4 out of 4 */}
 								</div>
 							</div>
 						</div>
 					</motion.div>{" "}
-					{/* Achievements Section - Right */}
+					{/* Erasmus Section - Right */}
 					<motion.div
-						className="flex flex-col justify-start px-5 md:px-0"
+						className="px-5"
 						initial={{ opacity: 0, x: 50 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.4 }}>
-						<h2 className="font-semibold text-xl mt-7">
-							Achievements
-						</h2>
-						<p className="text-md font-normal mb-3 md:mb-6">
-							Some of my achievements during my study.
-						</p>
-
-						{/* Achievements Container with transparent bottom effect */}
-						<div className="relative">
-							<div className="space-y-4">
-								{/* Show visible achievements */}
-								<AnimatePresence>
-									{visibleAchievements.map(
-										(achievement, index) => (
-											<motion.div
-												key={`${achievement.year}-${index}`}
-												className="group"
-												initial={{ opacity: 0, y: 20 }}
-												animate={{ opacity: 1, y: 0 }}
-												exit={{ opacity: 0, y: -20 }}
-												transition={{
-													duration: 0.5,
-													delay: index * 0.05,
-												}}>
-												{/* Year indicator for first achievement of each year */}
-												{index === 0 ||
-												visibleAchievements[index - 1]
-													?.year !==
-													achievement.year ? (
-													<div className="flex items-center gap-3 mb-3 mt-2">
-														<div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-															<span className="text-xs font-bold text-gray-600">
-																{
-																	achievement.year
-																}
-															</span>
-														</div>
-														<div className="flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent"></div>
-													</div>
-												) : null}
-
-												{/* Glassmorphism achievement card with monochrome to color effect */}
-												<div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-4 shadow-lg hover:bg-white/30 transition-all duration-300 hover:shadow-xl grayscale hover:grayscale-0">
-													<div className="flex items-center gap-4">
-														<div
-															className={`aspect-square w-10 rounded-full bg-gradient-to-r ${achievement.color} flex items-center justify-center text-primary-foreground transition-all duration-300`}>
-															<FontAwesomeIcon
-																icon={
-																	achievement.icon
-																}
-																className="text-white h-5 w-5"
-															/>
-														</div>
-														<div>
-															<h3 className="font-medium">
-																{
-																	achievement.title
-																}
-															</h3>
-															<p className="text-sm">
-																{
-																	achievement.subtitle
-																}
-															</p>
-															<div className="text-xs text-gray-500 mt-1">
-																{
-																	achievement.date
-																}
-															</div>
-														</div>
-													</div>
-												</div>
-											</motion.div>
-										),
-									)}
-								</AnimatePresence>
+						<div className="font-medium text-lg mb-4">
+							2023 - 2024
+						</div>
+						<div>
+							<h2 className="font-semibold text-xl">
+								Università degli Studi della Campania Luigi Vanvitelli
+							</h2>
+							<h3 className="text-md font-normal mb-3">
+								Erasmus+ Program | Naples, Italy
+							</h3>
+							<div className="gap-4 mb-4 flex items-stretch md:h-[300px] xl:h-[400px]">
+								<div className="group w-full h-full">
+									<Image
+										src={Napoli}
+										width={400}
+										height={225}
+										alt="Erasmus"
+										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
+									/>
+								</div>
 							</div>
-
-							{/* Transparent bottom overlay when not expanded */}
-							{!isExpanded && hasMoreAchievements && (
-								<div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-stale-300 via-stale/70 to-transparent pointer-events-none"></div>
-							)}
-
-							{/* Expand/Collapse Button */}
-							{hasMoreAchievements && (
-								<motion.div
-									className="flex justify-center mt-6"
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									transition={{ delay: 0.5 }}>
-									<button
-										onClick={() =>
-											setIsExpanded(!isExpanded)
-										}
-										className="flex items-center gap-2 px-6 py-3 bg-white/30 backdrop-blur-md border border-white/40 rounded-full hover:bg-white/40 transition-all duration-300 text-sm font-medium shadow-lg hover:shadow-xl">
-										<span>
-											{isExpanded
-												? `Show Less`
-												: `Show ${allAchievements.length - 4} More`}
-										</span>
-										<FontAwesomeIcon
-											icon={
-												isExpanded
-													? faChevronUp
-													: faChevronDown
-											}
-											className="h-3 w-3 transition-transform duration-300"
-										/>
-									</button>
-								</motion.div>
-							)}
+							<p className="text-gray-400 text-justify body text-lg">
+								Durante el curso 2023-2024 participé en el programa{" "}
+								<span className="text-white font-medium">Erasmus+</span>{" "}
+								en Nápoles, Italia. Una experiencia que marcó tanto mi
+								desarrollo profesional como personal al sumergirme en un entorno académico y
+								cultural completamente nuevo. 
+								En la <span className="text-white font-medium">Università degli Studi della 
+									Campania Luigi Vanvitelli</span>, tuve la oportunidad de ampliar mis horizontes 
+									académicos y culturales,
+								enfrentándome a nuevos desafíos y adaptándome a un sistema educativo diferente,
+								además de <span className="text-white font-medium">crecer personalmente</span> al convivir con estudiantes de diversas nacionalidades
+								y culturas, <span className="text-white font-medium">aprender un idioma de cero</span> y desenvolverme manteniendo conversaciones fluidas
+								e integrarme bien en su comunidad.
+								 <br />
+								<br />
+								Esta experiencia no solo <span className="text-white font-medium">fortaleció mi capacidad de adaptación y resiliencia</span>,
+								sino que también me permitió desarrollar una perspectiva internacional que enriquece 
+								mi enfoque hacia la ingeniería y el trabajo en equipo. Sin duda fue una decisión que <span className="text-white font-medium">recomiendo
+								a cualquier estudiante</span>, ya que el crecimiento personal y profesional que se obtiene es enorme,
+								además de ser una experiencia que se disfruta muchísimo.
+							</p>
 						</div>
 					</motion.div>
+					{/* Achievements Section (temporarily commented out)
+						The original Achievements UI has been extracted to
+						`app/about/components/educationAchievements.jsx` so the
+						markup and behavior are preserved for future reuse.
+
+						To re-enable, uncomment the import at the top of this file:
+						  // import AchievementsSection from './educationAchievements'
+
+						And replace this comment with:
+						  <AchievementsSection
+							visibleAchievements={visibleAchievements}
+							isExpanded={isExpanded}
+							setIsExpanded={setIsExpanded}
+							hasMoreAchievements={hasMoreAchievements}
+							allAchievements={allAchievements}
+						  />
+					*/}
 				</div>
 			</section>
 		</Wrapper>

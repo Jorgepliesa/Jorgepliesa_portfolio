@@ -2,115 +2,95 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { CodepenIcon, WebhookIcon, ActivityIcon, MobileIcon } from "./icons"
-
+import { useLanguage } from "@/context/LanguageContext";
 const skillCategories = {
-	web: {
-		title: "Web Development",
+	core: {
+		title: "Core Programming & Systems",
 		icon: CodepenIcon,
-		description: "Building modern, responsive web applications",
+		description: "Lenguajes puros, especialmente de bajo nivel y de propósito general",
 		languages: [
-			{ name: "NextJS", highlight: true },
-			{ name: "React", highlight: true },
+			{ name: "C++", highlight: true },
+			{ name: "Java", highlight: true },
+			{ name: "C", highlight: false },
+			{ name: "SQL", highlight: true },
+			{ name: "Pyhton", highlight: false },
+			{ name: "JavaScript", highlight: true },
+			{ name: "HTML5", highlight: false },
+			{ name: "SCSS", highlight: false },
 			{ name: "TypeScript", highlight: true },
-			{ name: "JavaScript", highlight: false },
-			{ name: "Laravel", highlight: true },
-			{ name: "HTML", highlight: false },
-			{ name: "CSS", highlight: false },
-			{ name: "TailwindCSS", highlight: true },
-			{ name: "Bootstrap", highlight: false },
-			{ name: "Flask", highlight: false },
-			{ name: "Django", highlight: false },
-			{ name: "Firebase", highlight: false },
+			{ name: "R", highlight: false },
+			{ name: "php", highlight: false },
+			{ name: "C#", highlight: false },
 		],
 		tools: [
-			"Vercel",
-			"Vite",
-			"Figma",
-			"Docker",
-			"Kubernetes",
-			"Git",
-			"Github",
-			"GitLab",
-			"Bitbucket",
-			"Google Cloud",
-			"Postman",
-		],
-	},
-	api: {
-		title: "Backend & API",
-		icon: WebhookIcon,
-		description: "Creating robust and scalable backend services",
-		languages: [
-			{ name: "Java Spring Boot", highlight: true },
-			{ name: "NodeJS", highlight: false },
-			{ name: "ExpressJS", highlight: true },
-			{ name: "PHP", highlight: false },
-			{ name: "Laravel", highlight: true },
-			{ name: "FastAPI", highlight: true },
-			{ name: "Python", highlight: false },
-			{ name: "Flask", highlight: false },
-			{ name: "Django", highlight: false },
-			{ name: "PostgreSQL", highlight: true },
-			{ name: "MySQL", highlight: true },
-			{ name: "MongoDB", highlight: false },
-			{ name: "Firebase", highlight: false },
-		],
-		tools: [
-			"Docker",
-			"Kubernetes",
-			"Postman",
-			"Swagger",
-			"Git",
-			"Github",
-			"GitLab",
-			"Bitbucket",
-			"Google Cloud",
-			"IBM Cloud",
-		],
-	},
-	ai: {
-		title: "AI & Machine Learning",
-		icon: ActivityIcon,
-		description: "Developing intelligent solutions with ML/AI",
-		languages: [
-			{ name: "RAG Pipelines", highlight: true },
-			{ name: "Gemini API", highlight: true },
-			{ name: "OpenAI API", highlight: true },
-			{ name: "LangChain", highlight: true },
-			{ name: "Python", highlight: true },
-			{ name: "TensorFlow", highlight: true },
-			{ name: "PyTorch", highlight: false },
-			{ name: "Scikit-learn", highlight: false },
-			{ name: "Pandas", highlight: false },
-			{ name: "NumPy", highlight: false },
-			{ name: "Jupyter", highlight: false },
-		],
-		tools: [
+			"OpenGL",
+			"SFML",
 			"Jupyter Notebook",
-			"Google Colab",
-			"Google Cloud AI",
-			"AWS SageMaker",
-			"IBM Watson",
+			"SageMath",
 		],
 	},
-	mobile: {
-		title: "Mobile Development",
+	web: {
+		title: "Full-Stack Web & Mobile",
 		icon: MobileIcon,
-		description: "Cross-platform mobile app development",
+		description: "Building modern, responsive and cross-platform applications",
 		languages: [
-			{ name: "React Native", highlight: true },
-			{ name: "Flutter", highlight: true },
-			{ name: "JavaScript", highlight: false },
+			{ name: "React Native, Expo", highlight: true },
+			{ name: "NestJS, Express, TypeORM", highlight: true },
+			{ name: "node.js", highlight: true },
+			{ name: "Angular", highlight: true },
+			{ name: "Ionic", highlight: true },
+			{ name: "HTML5", highlight: true },
+			{ name: "SCSS", highlight: true },
 			{ name: "TypeScript", highlight: false },
-			{ name: "Dart", highlight: false },
+			{ name: "JavaScript", highlight: false },
+			{ name: "php", highlight: false },
 		],
-		tools: ["Android Studio", "React Native CLI"],
+		tools: [
+			"Swagger",
+			"Postman",
+			"Jasmine/Karma",
+			"Kendo UI",
+			"Expo Go",
+		],
+	},
+	Architecture: {
+		title: "Architecture, DevOps & Databases",
+		icon: WebhookIcon,
+		description: "Infrastructure, Data & CI/CD",
+		languages: [
+			{ name: "Git", highlight: true },
+			{ name: "Azure DevOps", highlight: true },
+			{ name: "SonarQube", highlight: true },
+			{ name: "Docker", highlight: true },
+			{ name: "PostgreSQL + TimeScaleDB", highlight: true },
+			{ name: "XAMPP", highlight: false },
+			{ name: "Apache", highlight: false },
+			{ name: "Agile Methodologies (Scrum)", highlight: false },
+		],
+		tools: [
+			"MySQL",
+			"Oracle",
+			"Github",
+			"PostgreSQL",
+		],
+	},
+	
+	IT: {
+		title: "Networking & IoT",
+		icon: ActivityIcon,
+		description: "Cyber-Defense, Hardware Interfaces & semantics",
+		languages: [
+			{ name: "WireShark", highlight: false },
+			{ name: "GNS3", highlight: false },
+			{ name: "Arduino", highlight: true },
+			{ name: "Solidity & Ethereum", highlight: false },
+		],
+		tools: ["Arduino", "API Telegram" , "MAGERIT", "PILAR"],
 	},
 };
 
 function SkillCard({ skill, isSelected, onClick }) {
 	const Icon = skill.icon;
-
 	return (
 		<motion.div
 			onClick={onClick}
@@ -222,7 +202,7 @@ function SkillDetails({ selectedSkill }) {
             <motion.span
               key={tool}
               variants={tagVariants}
-              className="px-4 py-1.5 bg-gray-300/30 border border-gray-400/20 rounded-lg text-gray-600 text-xs font-medium"
+              className="px-4 py-1.5 bg-gray-200/30 border border-gray-400/20 rounded-lg text-gray-300 text-xs font-medium"
             >
               {tool}
             </motion.span>
@@ -235,6 +215,7 @@ function SkillDetails({ selectedSkill }) {
 
 export default function Skills() {
 	const [selectedCategory, setSelectedCategory] = useState("web");
+	const { t } = useLanguage();
 	return (
 		<div className="relative">
 			<div className="mx-auto container px-6 py-20">
@@ -246,9 +227,8 @@ export default function Skills() {
 					<h2 className="text-5xl font-bold bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
 						Skills & Expertise
 					</h2>
-					<p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-						Explore my technical skills across different domains. Click on any
-						category to see the specific technologies and tools I work with.
+					<p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+						{t('about.desc_skills')}
 					</p>
 				</motion.div>
 

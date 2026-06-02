@@ -28,8 +28,8 @@ function Wrapper({ children }) {
 }
 
 export default function Quote() {
-	const text1 = '"There are no limits to what you can accomplish'.split(" ");
-	const text2 = 'except the limits you place on your own thinking."'.split(
+	const text1 = '"In software as in gaming, the hardest levels are the ones that forge our skills.'.split(" ");
+	const text2 = 'Engineering is about embracing the challenge."'.split(
 		" "
 	);
 	const [ref, isIntersecting] = useIntersectionObserver();

@@ -5,13 +5,15 @@ import Me1 from "@/public/image/me1.jpg";
 import Me2 from "@/public/image/me2.jpg";
 import Me3 from "@/public/image/me3.jpg";
 import Hr from "@/components/Hr";
+import { useLanguage } from "@/context/LanguageContext";
 
 function Title() {
+	const { t } = useLanguage();
 	return (
 		<div className="mt-10 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
 			<div className="flex justify-center items-center flex-col my-5 self-start ">
 				<Hr variant="long"></Hr>
-				<h1 className="text-3xl font-bold mt-3">Who Am I?</h1>
+				<h1 className="text-3xl font-bold mt-3">{t('about.title')}</h1>
 			</div>
 		</div>
 	);
@@ -35,7 +37,7 @@ export default function About() {
 								className="relative w-full h-full">
 								<Image
 									src={Me1}
-									alt="Alvalens"
+									alt="jorgepliesa"
 									fill
 									sizes="(max-width: 768px) 80vw, 40vw"
 									className="object-cover"
@@ -59,7 +61,7 @@ export default function About() {
 								className="relative w-full h-full">
 								<Image
 									src={Me2}
-									alt="Alvalens"
+									alt="jorgepliesa"
 									fill
 									sizes="(max-width: 768px) 60vw, 25vw"
 									className="object-cover"
@@ -85,7 +87,7 @@ export default function About() {
 								className="relative w-full h-full">
 								<Image
 									src={Me3}
-									alt="Alvalens"
+									alt="jorgepliesa"
 									fill
 									sizes="(max-width: 768px) 80vw, 35vw"
 									className="object-cover"
@@ -111,51 +113,42 @@ export default function About() {
 						type: "spring",
 					}}>
 					<h2 className="text-2xl font-bold tracking-wider mb-3">
-						Alvalen Shafelbilyunazra
+						Jorge Pérez Liesa
 					</h2>
-					<p className="text-gray-600 text-justify title text-lg leading-relaxed">
+					<p className="text-gray-400 text-justify body text-lg leading-relaxed">
 						I am a{" "}
-						<span className="text-black font-medium">
-							Product-Minded Software Engineer{" "}
-						</span>
-						specialized in bridging the gap between{" "}
-						<span className="text-black font-medium">
-							Modern Web Ecosystems and Enterprise Architectures
-						</span>
-						. A Computer Science graduate from{" "}
-						<span className="text-black font-medium">
-							Universitas Negeri Malang
-						</span>
-						, my professional journey is defined by high-stakes
-						projects, ranging from robust government-scale
-						microservices to sophisticated{" "}
-						<span className="text-black font-medium">
-							RAG-powered SaaS products{" "}
-						</span>
-						designed to bring the power of Generative AI to
-						end-users.
-						<br />
-						<br />
-						Currently, I engineer large-scale enterprise systems at{" "}
-						<span className="text-black font-medium">
-							MGG Software
-						</span>
-						, ensuring strict data compliance and high availability
-						for international clients. Simultaneously, I lead the
-						technical vision as the{" "}
-						<span className="text-black font-medium">
-							CTO of Intervyou
-						</span>
-						, an AI-driven platform supported by the{" "}
-						<span className="text-black font-medium">
-							Google for Startups Cloud Program and NVIDIA
-							Inception
-						</span>
-						. I remain dedicated to delivering measurable business
-						value at the intersection of web technologies and
-						artificial intelligence.
+					<span className="text-white font-medium">
+						Software & Game Developer{" "}
+					</span>
+					specialized in building immersive digital experiences and secure systems, bridging the gap between{" "}
+					<span className="text-white font-medium">
+						Modern Web Ecosystems and Core Software Architectures
+					</span>
+					. A Computer Science graduate from the{" "}
+					<span className="text-white font-medium">
+						University of Zaragoza
+					</span>
+					, my academic and professional journey is defined by tackling complex logic, ranging from low-level graphics optimization in C++ to full-stack application development.
+					<br />
+					<br />
+					Recently, I engineered highly responsive web products as a Front-End Developer at{" "}
+					<span className="text-white font-medium">
+						Nervia Consultores
+					</span>
+					, where I drove test coverage to 95% and optimized software deployment cycles via Azure DevOps. Simultaneously, I am leading the technical architecture of my thesis: a gamified cross-platform mobile application powered by{" "}
+					<span className="text-white font-medium">
+						React Native and NestJS
+					</span>
+					, designed to motivate and support pediatric cancer survivors. 
+					<br />
+					<br />
+					I am driven by clean code, cyber-defense patterns, and interactive design. I am currently seeking full-time opportunities in software engineering, cibersecurity, or game development—ready for{" "}
+					<span className="text-white font-medium">
+						100% remote roles or relocation wherever it takes
+					</span>
+					.
 					</p>
-					<Card />
+					{/* <Card /> */}
 				</motion.div>
 			</div>
 		</>

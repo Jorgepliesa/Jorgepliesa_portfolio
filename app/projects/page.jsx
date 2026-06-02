@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 import Image from "next/image";
 
 // images
-import Intervyou1 from "@/public/image/projects/web/intervyou/intervyou-1.png";
+import Intervyou1 from "@/public/image/projects/Ascension/Imagen1.png";
 import Intervyou2 from "@/public/image/projects/web/intervyou/intervyou-2.jpeg";
 import Intervyou3 from "@/public/image/projects/web/intervyou/intervyou-3.webp";
 import ProjectAll from "@/public/image/projects.png";
@@ -17,16 +17,18 @@ import Projects from "@/json/data.json";
 import FixedButon from "@/components/FixedButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { useLanguage } from "@/context/LanguageContext";
 
 const category = {
-	1: "Web Development",
-	2: "AI & Machine Learning",
+	1: "Software Development",
+	2: "Videogames",
 	9: "Other",
 };
 
 export default function Page() {
-	const [activeCategory, setActiveCategory] = useState(1);
+	const [activeCategory, setActiveCategory] = useState(null);
 	const projects = Projects.Projects.filter((item) => item.show === true);
+	const { t } = useLanguage();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -35,7 +37,7 @@ export default function Page() {
 		<>
 			<main className="overflow-hidden">
 				<FixedButon href="/#projects">
-					<FontAwesomeIcon icon={faChevronLeft} className="text-black pr-10" />
+					<FontAwesomeIcon icon={faChevronLeft} className="text-[#39ff14] pr-10" />
 				</FixedButon>
 				<div className="relative h-screen w-screen  gap-4 p-10 flex justify-center items-center flex-col mb-10 overflow-hidden">
 					<div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
@@ -46,7 +48,7 @@ export default function Page() {
 							className="relative bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
 							<Image
 								src={ProjectAll}
-								alt="Alvalens"
+								alt="jorgepliesa"
 								fill
 								placeholder="blur"
 								className="object-cover"
@@ -56,15 +58,11 @@ export default function Page() {
 					</div>
 					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 pt-4 backdrop-filter backdrop-blur-sm md:backdrop-blur-none md:backdrop-filter-none bg-gray-100 bg-opacity-50 md:bg-transparent md:pt-0">
 						<h1 className="md:bg-white bg-transparent lg:bg-transparent bg-opacity-50 md-px-0 text-black text-5xl md:text-8xl font-bold">
-							My Projects
+							{t('projects.title')}
 						</h1>
 						<Hr />
-						<p className="title  text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5">
-							List of my projects that I have done and{" "}
-							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-								{" "}
-								currently working on.
-							</span>
+						<p className="title  text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem] mb-5 max-w-[600px]">
+							{t('projects.desc')}
 						</p>
 						<motion.div
 							initial={{ opacity: 0, y: 100 }}
@@ -101,7 +99,7 @@ export default function Page() {
 									className="relative w-full h-full shadow-lg">
 									<Image
 										src={Intervyou1}
-										alt="Alvalens"
+										alt="jorgepliesa"
 										fill
 										placeholder="blur"
 										className="rat object-cover"
@@ -125,7 +123,7 @@ export default function Page() {
 									className="relative w-full h-full shadow-lg ">
 									<Image
 										src={Intervyou3}
-										alt="Alvalens"
+										alt="jorgepliesa"
 										fill
 										placeholder="blur"
 										className="object-cover"
@@ -152,7 +150,7 @@ export default function Page() {
 									className="relative w-full h-full shadow-lg">
 									<Image
 										src={Intervyou2}
-										alt="Alvalens"
+										alt="jorgepliesa"
 										fill
 										placeholder="blur"
 										className="object-cover"
@@ -177,28 +175,31 @@ export default function Page() {
 							type: "spring",
 						}}>
 						<h2 className="text-2xl font-bold tracking-wider mb-3">
-							Intervyou AI
+							Ascension - Roguelike/Arcade Football Videogame 
 						</h2>
-						<p className="text-gray-600 text-justify title text-lg">
-							AI Based interview Preparation Website created to help fresh
-							graduates and job seekers prepare for interviews and optimize
-							their CV through AI-powered features. The website is built using
-							Next.js, TypeScript, Tailwind CSS, Shadcn UI, Prisma, and MySQL
-							(TiDB). This website can comprehensively analyze the user&apos;s
-							interview performance by providing a analysis of the user&apos;s
-							answer, gesture, and material recommendation to improve the user&apos;s
-							interview skills.
+						<p className="text-gray-400 text-justify body text-lg">
+							Para un proyecto de la universidad en grupo, diseñamos un videojuego de fútbol 
+							con mecánicas de roguelike desde cero. Diseñado en C++, construimos nuestro propio
+							motor gráfico utilizando OpenGL y SFML, implementando físicas personalizadas y una IA 
+							desafiante para los oponentes. El juego presenta niveles generados proceduralmente, 
+							power-ups únicos y una jugabilidad adictiva que combina estrategia y acción en cada partido.
+							El juego tiene un apartado artístico pixel art en 2D, con una sección en 3D para jugar los penaltis.
+							<br /> <br />
+							Resalto este proyecto puesto que en un videojuego es donde se involucran todas las areas de la informática, 
+							desde el diseño de algoritmos, la optimización de código, el diseño gráfico, la inteligencia artificial,
+							 entre otros. Además, es un proyecto que me permitió aprender y aplicar una gran cantidad de conocimientos 
+							 técnicos en un contexto práctico y creativo.
 						</p>{" "}
 						<div className="mt-3">
 							<Button variation="primary">
-								<Link href="projects/intervyou">More</Link>
+								<Link href="projects/Ascension">More</Link>
 							</Button>
 							<Button variation="secondary">
 								<a
-									href="https://www.intervyou.me"
+									href="https://jorgepliesa.itch.io/ascension"
 									target="_blank"
 									rel="noopener noreferrer">
-									Preview
+									Play!
 								</a>
 							</Button>
 						</div>
@@ -221,7 +222,7 @@ export default function Page() {
 								delay: 0.7,
 								type: "spring",
 							}}>
-							Other Note Worthy Projects
+							{t('projects.more_projects')}
 						</motion.h1>
 					</div>
 				</div>
@@ -248,7 +249,7 @@ export default function Page() {
 									? "bg-gray-300 text-black hover:bg-gray-700 hover:text-white"
 									: "bg-gray-700 text-white hover:bg-gray-300 hover:text-black"
 							}`}
-							onClick={() => setActiveCategory(key)}>
+							onClick={() => setActiveCategory(activeCategory === key ? null : key)}>
 							{category[key]}
 						</button>
 					))}
@@ -266,7 +267,7 @@ export default function Page() {
 				</div>
 
 				{/* view in archive btn */}
-				<motion.div
+				{/*<motion.div
 					initial={{
 						opacity: 0,
 					}}
@@ -277,7 +278,7 @@ export default function Page() {
 					<Button variation="primary">
 						<Link href="projects/archive">View In Archive</Link>
 					</Button>
-				</motion.div>
+				</motion.div>*/}
 			</main>
 		</>
 	);

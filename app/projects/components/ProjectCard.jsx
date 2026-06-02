@@ -7,8 +7,8 @@ import BlurImage from "@/public/image/placeholder/blur.jpg";
 export default function ProjectCard({ project, index, activeCategory }) {
 	return (
 		<>
-			{project.category.includes(parseInt(activeCategory)) && (
-				<Link href={"projects/" + project.slug} key={index}>
+			{(activeCategory === null || project.category.includes(parseInt(activeCategory))) && (
+				//<Link href={"projects/" + project.slug} key={index}>
 					<motion.div
 						className="z-10 relative flex justify-center items-start flex-col mb-5 md:px-10 w-full h-auto bg-gray-400 group/tes py-20 px-5 md:py-2 aspect-video "
 						initial={{
@@ -24,7 +24,7 @@ export default function ProjectCard({ project, index, activeCategory }) {
 						}}>
 						<Image
 							src={project.thumbnail}
-							alt="Alvalens"
+							alt="jorgepliesa"
 							fill
 							placeholder="blur"
 							className="bg-slate-950 opacity-10  group-hover/tes:opacity-100 transition-all ease duration-500 object-cover"
@@ -51,7 +51,7 @@ export default function ProjectCard({ project, index, activeCategory }) {
 							</div>
 						</div>
 					</motion.div>
-				</Link>
+				//</Link>
 			)}
 		</>
 	);

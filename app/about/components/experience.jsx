@@ -6,157 +6,16 @@ import { useState } from "react";
 const experiences = [
 	{
 		id: 1,
-		startDate: "Sep 2023",
-		endDate: "Jan 2024",
-		company: "Universitas Negeri Malang",
-		position: "Assistant Lecturer",
-		type: "Seasonal",
-		location: "Malang, Indonesia",
+		startDate: "Jul 2025",
+		endDate: "Sep 2025",
+		company: "Nervia Consultores SL",
+		position: "Frontend Developer Web",
+		type: "Full-time",
+		location: "Zaragoza, Spain",
 		description:
-			"Assisted in teaching and mentoring students in algorithms and data structures, focusing on practical applications and problem-solving techniques. Developed course materials and provided support in lab sessions.",
-		skills: ["Python", "C", "Algorithms", "Data Structures", "Mentoring"],
-	},
-	{
-		id: 2,
-		startDate: "Jul 2024",
-		endDate: "Jan 2025",
-		company: "Outlier AI",
-		position: "AI Trainer",
-		type: "Freelance (Remote)",
-		location: "Oakland, California",
-		description:
-			"Trained LLM models using RLFH, focusing on enhancing their understanding of human language and improving their response accuracy. Collaborated with a team of AI specialists to refine model performance and ensure high-quality outputs.",
-		skills: [
-			"Generative AI",
-			"RLHF",
-			"LLM",
-			"Prompt Engineering",
-			"Teamwork",
-		],
-	},
-	{
-		id: 3,
-		startDate: "Jun 2023",
-		endDate: "Feb 2025",
-		company: "PUI-PT DLI",
-		position: "Fullstack Developer",
-		type: "Freelance",
-		location: "Malang, Indonesia",
-		description:
-			"Crafted and maintained web applications using Laravel, ensuring high performance and responsiveness. Collaborated with designers and other  developers to create seamless user experiences.",
-		skills: ["Laravel", "MySQL", "PHP", "JavaScript", "Teamwork"],
-	},
-	{
-		id: 4,
-		startDate: "Apr 2025",
-		endDate: "Jul 2025",
-		company: "Vektorian Labophase",
-		position: "Front-end Developer",
-		type: "Freelance",
-		location: "Malang, Indonesia",
-		description:
-			"Developed and maintained web applications using Next.js. Focused on creating responsive and user-friendly interfaces while ensuring backend functionality. Collaborated with backend and designers to implement modern UI/UX principles.",
-		skills: ["Next.js", "Typescript", "Teamwork"],
-	},
-	{
-		id: 5,
-		startDate: "Apr 2023",
-		endDate: "Jul 2025",
-		company: "Self-Employed",
-		position: "Web Developer & AI Consultant",
-		type: "Freelance",
-		location: "Malang, Indonesia",
-		description:
-			"Developed 15+ web applications using Next.js, React, and Laravel. Provided AI consulting services, including creating custom LLMs. Focused on delivering high-quality, user-friendly applications and AI solutions.",
-		skills: [
-			"Next.js",
-			"React",
-			"Laravel",
-			"MySQL",
-			"PostgreSQL",
-			"MongoDB",
-			"JavaScript",
-			"TypeScript",
-			"Gemini AI",
-		],
-	},
-	{
-		id: 6,
-		startDate: "Aug 2023",
-		endDate: "Feb 2025",
-		company: "PT Hafdzamedia Teknologi Aplikasi",
-		position: "Fullstack Web Developer",
-		type: "Part-time",
-		location: "Malang, Indonesia",
-		description:
-			"Developed and maintained web applications using React, Next.js, and Laravel. Focused on creating responsive and user-friendly interfaces while ensuring backend functionality.",
-		skills: [
-			"React",
-			"Next.js",
-			"Laravel",
-			"MySQL",
-			"JavaScript",
-			"TypeScript",
-			"Teamwork",
-		],
-	},
-	{
-		id: 7,
-		startDate: "Feb 2025",
-		endDate: "Aug 2025",
-		company: "Joki Proyek",
-		position: "IT Implementation Specialist",
-		type: "Contract (Remote)",
-		location: "Malang, Indonesia",
-		description:
-			"Engineered internal microservices architecture. Refactored legacy monolithic modules and optimized messaging systems using Laravel/Next.js.",
-		skills: [
-			"Next.js",
-			"Laravel",
-			"MySQL",
-			"PostgreSQL",
-			"JavaScript",
-			"TypeScript",
-			"MongoDB",
-			"Docker",
-			"Teamwork",
-		],
-	},
-	{
-		id: 8,
-		startDate: "Jan 2025",
-		endDate: "Present",
-		company: "Intervyou (Google for Startups)",
-		position: "Co-Founder & CTO",
-		type: "Part-time",
-		location: "Remote",
-		description:
-			"Bootstrapped an AI-powered SaaS to 3,000+ users. Architected the core AI assessment engine using Next.js and RAG pipelines.",
-		skills: [
-			"Next.js",
-			"Generative AI",
-			"RAG",
-			"Product Engineering",
-		],
-	},
-	{
-		id: 9, 
-		startDate: "Aug 2025",
-		endDate: "Present",
-		company: "MGG Software",
-		position: "Software Engineer (Enterprise Solutions)",
-		type: "Full-time (Remote)",
-		location: "Malang",
-		description:
-			"Core engineer for a Tier-1 Singaporean Government Agency. Engineered high-availability backend microservices using Java Spring Boot, ensuring 99.9% uptime for nationwide traffic.",
-		skills: [
-			"Java Spring Boot",
-			"Microservices",
-			"Docker",
-			"PostgreSQL",
-			"React.js",
-		],
-	},
+			"Participé en diversos proyectos como front-end usando Angular + Ionic, donde me aseguré de realizar páginas web Responsive. Además me encargué del testing automatizado y control de pruebas logrando una excelencia y elevando la calidad del producto de un 95% de coverage, superando los estándares requeridos. Por último, gestioné de forma eficiente el ciclo de vida del software y el control de versiones dando lugar a una optimización de plazos de entrega reduciendo estos a la mitad de tiempo estipulado y consiguiendo una mayor eficiencia para la empresa.",
+		skills: ["Angular", "Ionic", "Kendo UI", "SCSS", "SonarQube", "Jasmine", "Methodology Agile & CI/CD", "Azure DevOps"],
+	}
 ];
 
 experiences.reverse();
@@ -249,7 +108,7 @@ function ExperienceCard({ experience, index, isEven }) {
 				</div>
 
 				{/* Description */}
-				<p className="text-gray-600 text-justify leading-relaxed mb-4">
+				<p className="text-gray-300 text-justify leading-relaxed mb-4">
 					{experience.description}
 				</p>
 
@@ -258,7 +117,7 @@ function ExperienceCard({ experience, index, isEven }) {
 					{experience.skills.map((skill, idx) => (
 						<span
 							key={idx}
-							className="bg-gray-200/60 hover:bg-gray-300/60 border border-gray-400/40 text-black px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm hover:scale-105">
+							className="bg-gray-200 hover:bg-gray-300/60 border border-gray-400/40 text-black px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm hover:scale-105">
 							{skill}
 						</span>
 					))}

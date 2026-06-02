@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Fira_Code, Space_Mono } from "next/font/google";
+import { Fira_Code, Space_Mono, Orbitron, Share_Tech_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -20,6 +20,20 @@ const spaceMono = Space_Mono({
 	weight: ["400", "700"],
 	display: "swap",
 	variable: "--font-jost", 
+});
+
+const orbitron = Orbitron({
+	subsets: ["latin"],
+	weight: ["400", "500", "700"],
+	display: "swap",
+	variable: "--font-orbitron",
+});
+
+const shareTechMono = Share_Tech_Mono({
+	subsets: ["latin"],
+	weight: ["400"],
+	display: "swap",
+	variable: "--font-share-tech-mono",
 });
 
 export const metadata = {
@@ -64,22 +78,21 @@ const jsonLd = {
 	url: "https://jorgepliesa-portfolio.vercel.app/",
 	jobTitle: "Computer Engineer",
 	worksFor: [
-		{ "@type": "Organization", name: "MGG Software" },
-		{ "@type": "Organization", name: "Intervyou" },
+		{ "@type": "Organization", name: "Ascension" },
 	],
 	alumniOf: {
 		"@type": "CollegeOrUniversity",
-		name: "Universitas Negeri Malang",
+		name: "Universidad de Zaragoza",
 	},
 	sameAs: [
 		"https://github.com/jorgepliesa",
-		"https://www.linkedin.com/in/jorgeperezliesa/",
+		"https://www.linkedin.com/in/jorge-perez-liesa/",
 	],
 };
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className={`${firaCode.variable} ${spaceMono.variable}`}>
+		<html lang="en" className={`${firaCode.variable} ${spaceMono.variable} ${orbitron.variable} ${shareTechMono.variable}`}>
 			<body>
 				<script
 					type="application/ld+json"

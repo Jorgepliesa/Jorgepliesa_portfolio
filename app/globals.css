@@ -14,7 +14,7 @@ html {
 }
 
 body {
-	font-family: var(--font-poppins), sans-serif !important;
+	font-family: var(--font-orbitron), sans-serif !important;
 	color: var(--color-fg);
 	background-color: var(--color-bg);
 	background-image: radial-gradient(rgba(255,255,255,0.015) 1px, transparent 1px);
@@ -74,7 +74,7 @@ h6 {
 } */
 
 span {
-  font-family: var(--font-jost), sans-serif;
+  font-family: var(--font-orbitron), sans-serif;
 }
 
 li {

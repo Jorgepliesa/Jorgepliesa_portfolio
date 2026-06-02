@@ -11,7 +11,7 @@ import { FullPageWrapper, Section, useFullPage } from "@alvalens/react-fullpage-
 
 // components
 import Button from "@/components/Button";
-import Me from "@/public/image/me.jpg";
+import Me from "@/public/image/me1.jpg";
 import MeAbout from "@/public/image/me2.jpg";
 import Setup from "@/public/image/setup.jpg";
 import ProjectAll from "@/public/image/projects.png";
@@ -130,7 +130,7 @@ const MyPage = () => {
 							}}>
 							<Button variation="primary">
 								<Link
-									href={"/docs/cv.pdf"}
+									href={"/docs/CV_V_JorgePerezLiesa.pdf"}
 									target="_blank"
 									rel="noopener noreferrer"
 									download>
@@ -189,7 +189,7 @@ const MyPage = () => {
 								fill
 								sizes="(max-width: 768px) 80vw, 30vw"
 								className="object-cover"
-								alt="Alvalens"
+								alt="jorgepliesa"
 								placeholder="blur"
 							/>
 						</motion.div>
@@ -256,7 +256,7 @@ const MyPage = () => {
 								fill
 								sizes="(max-width: 768px) 80vw, 30vw"
 								className="object-cover"
-								alt="Alvalens Setup"
+								alt="jorgepliesa Setup"
 								placeholder="blur"
 							/>
 						</motion.div>
@@ -274,18 +274,14 @@ const MyPage = () => {
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title  text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+							className="title  text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem] mb-5 max-w-[600px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
 								delay: 0.2,
 								type: "spring",
 							}}>
-							Selected works that I&apos;ve built over the years.
-							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-								{" "}
-								and currently working on.
-							</span>
+							{t('home.desc_projects')}{" "}
 						</motion.p>
 						<motion.div
 							initial={{ y: 40, opacity: 0 }}
@@ -327,7 +323,7 @@ const MyPage = () => {
 								fill
 								sizes="(max-width: 768px) 80vw, 30vw"
 								className="object-cover"
-								alt="Alvalens Setup"
+								alt="jorgepliesa Setup"
 								placeholder="blur"
 							/>
 						</motion.div>
@@ -341,21 +337,18 @@ const MyPage = () => {
 								delay: 0.1,
 								type: "spring",
 							}}>
-							Get In Touch
+							{t("home.get_in_touch")}
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] md:mb-5"
+							className="title text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem] md:mb-5 max-w-[600px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
 								delay: 0.2,
 								type: "spring",
 							}}>
-							Feel free to contact me if you have any{" "}
-							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-								questions or just want to say hi.
-							</span>
+							{t('home.desc_get_in_touch')}
 						</motion.p>
 						<motion.p
 							className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
@@ -365,14 +358,14 @@ const MyPage = () => {
 								delay: 0.3,
 								type: "spring",
 							}}>
-							<a href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,">
-								alvalen.shafel04@gmail.com
+							<a href="mailto:jorgepliesa@gmail.com?subject=Hello&body=Estimado Jorge: ">
+								jorgepliesa@gmail.com
 							</a>
 						</motion.p>
 						{/* icons */}
 						<div className="flex justify-center items-center space-x-4">
 							<motion.a
-								href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,"
+								href="mailto:jorgepliesa@gmail.com?subject=Hello&body=Estimado Jorge: "
 								aria-label="Send email"
 								className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
 								initial={{ y: 40, opacity: 0 }}
@@ -388,7 +381,7 @@ const MyPage = () => {
 							</motion.a>
 
 							<motion.a
-								href="https://github.com/Alvalens"
+								href="https://github.com/jorgepliesa"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="GitHub profile"
@@ -404,7 +397,7 @@ const MyPage = () => {
 									className="text-3xl"
 								/>
 							</motion.a>
-							<motion.a
+							{/*<motion.a
 								href="https://www.instagram.com/alvalens_/"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -420,9 +413,9 @@ const MyPage = () => {
 									icon={faInstagram}
 									className="text-3xl"
 								/>
-							</motion.a>
+							</motion.a>*/}
 							<motion.a
-								href="https://www.linkedin.com/in/alvalen-shafel-8a081a254/"
+								href="https://www.linkedin.com/in/jorge-perez-liesa/"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="LinkedIn profile"
@@ -438,7 +431,7 @@ const MyPage = () => {
 									className="text-3xl"
 								/>
 							</motion.a>
-							<motion.a
+							{/*<motion.a
 								href="https://discordapp.com/users/bloody#6118"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -454,7 +447,7 @@ const MyPage = () => {
 									icon={faDiscord}
 									className="text-3xl"
 								/>
-							</motion.a>
+							</motion.a>*/}
 						</div>
 					</div>
 				</div>
