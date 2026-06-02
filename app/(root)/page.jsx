@@ -68,7 +68,7 @@ const MyPage = () => {
 	return (
 		<FullPageWrapper>
 			<Section>
-				<div className="mx-auto w-[82%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-10 overflow-hidden">
+				<div className="mx-auto w-[82%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-10 overflow-hidden">
 					<motion.div
 						className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
 						initial={{ x: -100, opacity: 0 }}
@@ -111,14 +111,14 @@ const MyPage = () => {
 							Software Developer
 						</motion.h1>
 						<motion.p
-							className="title text-md 2xl:text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem]"
-							initial={{ x: -100, opacity: 0 }}
+    						className="title text-xs md:text-md 2xl:text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem]"							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
 								delay: 0.4,
 								type: "spring",
 							}}>
-							{t('home.desc_1')} {t('home.desc_2')}
+							{t('home.desc_1')} 
+							    <span className="hidden md:inline"> {t('home.desc_2')}</span>
 						</motion.p>
 						<motion.div
 							className="buttons flex flex-row justify-center items-center space-x-4 mt-10"
@@ -194,9 +194,9 @@ const MyPage = () => {
 							/>
 						</motion.div>
 					</div>
-					<div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
+					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start text-start px-10 py-5 pb-10">
 						<motion.h1
-							className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold"
+							className="bg-black lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-4xl md:text-8xl font-bold"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -207,7 +207,7 @@ const MyPage = () => {
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title  text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem] mb-5 max-w-[600px]"
+							className="title  text-base mt-2 tracking-wider text-gray-400 leading-snug mb-3 max-w-[600px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -263,7 +263,7 @@ const MyPage = () => {
 					</div>
 					<div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
 						<motion.h1
-							className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold"
+							className="text-black text-2xl md:text-8xl font-bold"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -274,7 +274,7 @@ const MyPage = () => {
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title  text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem] mb-5 max-w-[600px]"
+							className="title text-base md:text-xl mt-2 tracking-wider text-gray-400 leading-snug mb-3 max-w-[500px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -328,9 +328,9 @@ const MyPage = () => {
 							/>
 						</motion.div>
 					</div>
-					<div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 overflow-hidden">
+					<div className="z-10 w-full absolute md:w-auto md:left-[10%] bottom-0 md:bottom-auto md:top-1/3 col-span-2 flex flex-col justify-center items-start text-start px-10 py-6 md:py-0">
 						<motion.h1
-							className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold mb-3"
+							className="text-black text-4xl md:text-8xl font-bold mb-3"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -341,7 +341,7 @@ const MyPage = () => {
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem] md:mb-5 max-w-[600px]"
+							className="title text-sm md:text-xl mt-4 tracking-wider text-gray-400 leading-relaxed max-w-[500px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -351,7 +351,7 @@ const MyPage = () => {
 							{t('home.desc_get_in_touch')}
 						</motion.p>
 						<motion.p
-							className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+							className="title text-base md:text-xl mt-3 tracking-wider text-gray-500 leading-relaxed mb-5"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -362,12 +362,11 @@ const MyPage = () => {
 								jorgepliesa@gmail.com
 							</a>
 						</motion.p>
-						{/* icons */}
-						<div className="flex justify-center items-center space-x-4">
+						<div className="flex justify-start items-center space-x-4">
 							<motion.a
 								href="mailto:jorgepliesa@gmail.com?subject=Hello&body=Estimado Jorge: "
 								aria-label="Send email"
-								className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+								className="flex justify-center items-center bg-gray-700 w-12 h-12 md:w-14 md:h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
 								initial={{ y: 40, opacity: 0 }}
 								whileInView={{ y: 0, opacity: 1 }}
 								transition={{
@@ -379,13 +378,12 @@ const MyPage = () => {
 									className="text-3xl"
 								/>
 							</motion.a>
-
 							<motion.a
 								href="https://github.com/jorgepliesa"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="GitHub profile"
-								className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+								className="flex justify-center items-center bg-gray-700 w-12 h-12 md:w-14 md:h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
 								initial={{ opacity: 0, y: 40 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{
@@ -419,7 +417,7 @@ const MyPage = () => {
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="LinkedIn profile"
-								className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+								className="flex justify-center items-center bg-gray-700 w-12 h-12 md:w-14 md:h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
 								initial={{ opacity: 0, y: 40 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{

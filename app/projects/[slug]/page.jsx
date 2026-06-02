@@ -42,6 +42,10 @@ function ProjectImage({ src, alt, index }) {
 function ImageCarousel({ images, altPrefix }) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
+	const isVideo = (url) => {
+		return url.match(/\.(mp4|webm|ogg)$/i);
+	};
+
 	const prevSlide = () => {
 		setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
 	};
@@ -53,18 +57,41 @@ function ImageCarousel({ images, altPrefix }) {
 	if (!images || images.length === 0) return null;
 
 	if (images.length === 1) {
-		return <ProjectImage src={images[0]} alt={`${altPrefix} 1`} index={10} />;
+		return isVideo(images[0]) ? (
+			<video
+				className="h-auto w-full object-contain transition-opacity duration-500 rounded"
+				controls
+			>
+				<source src={images[0]} type="video/mp4" />
+			</video>
+		) : (
+			<ProjectImage src={images[0]} alt={`${altPrefix} 1`} index={10} />
+		);
 	}
 
 	return (
 		<div className="relative w-full max-w-7xl mx-auto group">
-			<div className="overflow-hidden rounded">
+			<div className="overflow-hidden rounded bg-black">
 				<div
 					className="flex transition-transform duration-500 ease-in-out"
 					style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
 					{images.map((img, i) => (
-						<div key={i} className="min-w-full flex-shrink-0">
-							<ProjectImage src={img} alt={`${altPrefix} ${i + 1}`} index={10 + i} />
+						<div key={i} className="min-w-full flex-shrink-0 aspect-video relative overflow-hidden w-full flex items-center justify-center bg-black">
+							{isVideo(img) ? (
+								<video
+									className="block w-full h-full max-w-full object-contain"
+									controls
+									preload="metadata"
+									onClick={(e => e.stopPropagation())}
+								>
+									<source src={img} type="video/mp4" />
+									Your browser does not support the video tag.
+								</video>
+							) : (
+								<div className="w-full h-full relative flex items-center justify-center">
+									<ProjectImage src={img} alt={`${altPrefix} ${i + 1}`} index={10 + i} />
+								</div>
+							)}
 						</div>
 					))}
 				</div>
@@ -298,7 +325,7 @@ function Page(props) {
 						{data.desc.map((desc, index) => (
 							<p
 								key={index}
-								className="text-xl text-justify tracking-wide font-normal text-gray-400 mb-5">
+								className="text-xl text-justify tracking-wide font-normal text-gray-400 mb-5 max-w-[1000px]">
 								{desc}
 							</p>
 						))}
@@ -307,7 +334,7 @@ function Page(props) {
 						<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400 md:-mt-[200px]">
 							Goal
 						</h2>
-						<p className="text-xl text-justify tracking-wide font-normal text-gray-400 mb-5">
+						<p className="text-xl text-justify tracking-wide font-normal text-gray-400 mb-5 max-w-[1000px]">
 							{data.goal}
 						</p>
 					</div>
@@ -344,7 +371,7 @@ function Page(props) {
 							{section.title}
 						</h2>
 					</div>
-					<div className="w-full">
+					<div className="w-full md:max-h-[600px] max-w-[800px] overflow-hidden rounded shadow-xl bg-black aspect-video relative flex justify-center items-center">
 						<ImageCarousel images={section.images || (section.image ? [section.image] : [])} altPrefix={section.title} />
 					</div>
 					<div className="w-full flex justify-center items-center">

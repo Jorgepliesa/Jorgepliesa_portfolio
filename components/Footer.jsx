@@ -4,14 +4,17 @@ import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+	const { t } = useLanguage();
+
 	return (
 		<div className="flex justify-center items-center flex-col mt-5 overflow-hidden">
 			<div className="flex justify-center items-center flex-col mt-5 self-center min-h-[50vh] border-b-2 min-w-[80vw] ">
 				<Link href="/#contact">
 					<motion.h2
-						className="text-xl font-medium mt-3 text-center text-gray-400  hover:underline whitespace-nowrap leading-none md:tracking-[0.5rem]"
+						className="text-lg font-medium mt-3 text-center text-gray-400  hover:underline whitespace-nowrap leading-none md:tracking-[0.5rem]"
 						initial={{
 							opacity: 0,
 							x: -100,
@@ -23,10 +26,10 @@ export default function Footer() {
 						transition={{
 							delay: 0.2,
 						}}>
-						Want something like this?
+						{t('footer.desc')}
 					</motion.h2>
 					<motion.h1
-						className="text-5xl md:text-7xl font-medium mt-3  hover:underline whitespace-nowrap leading-none"
+						className="text-2xl md:text-7xl font-medium mt-3  hover:underline whitespace-nowrap leading-none"
 						initial={{
 							opacity: 0,
 							x: 100,
@@ -38,7 +41,7 @@ export default function Footer() {
 						transition={{
 							delay: 0.5,
 						}}>
-						Get In Touch{" "}
+						{t('footer.contact_me')}{" "}
 						<FontAwesomeIcon
 							icon={faArrowAltCircleRight}
 							className="text-5xl ml-2 "

@@ -7,8 +7,8 @@ import Image from "next/image";
 
 // images
 import Intervyou1 from "@/public/image/projects/Ascension/Imagen1.png";
-import Intervyou2 from "@/public/image/projects/web/intervyou/intervyou-2.jpeg";
-import Intervyou3 from "@/public/image/projects/web/intervyou/intervyou-3.webp";
+import Intervyou2 from "@/public/image/projects/Ascension/ascension2.png";
+import Intervyou3 from "@/public/image/projects/Ascension/ascension3.png";
 import ProjectAll from "@/public/image/projects.png";
 
 import Hr from "@/components/Hr";
@@ -56,8 +56,8 @@ export default function Page() {
 							/>
 						</motion.div>
 					</div>
-					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 pt-4 backdrop-filter backdrop-blur-sm md:backdrop-blur-none md:backdrop-filter-none bg-gray-100 bg-opacity-50 md:bg-transparent md:pt-0">
-						<h1 className="md:bg-white bg-transparent lg:bg-transparent bg-opacity-50 md-px-0 text-black text-5xl md:text-8xl font-bold">
+					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 pt-4 backdrop-filter backdrop-blur-sm md:backdrop-blur-none md:backdrop-filter-none bg-black-100 bg-opacity-50 md:bg-transparent md:pt-0">
+						<h1 className="md:bg-black bg-transparent lg:bg-transparent bg-opacity-50 md-px-0 text-black text-5xl md:text-8xl font-bold">
 							{t('projects.title')}
 						</h1>
 						<Hr />

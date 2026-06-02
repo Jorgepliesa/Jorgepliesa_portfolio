@@ -37,5 +37,9 @@
     "desc": "Projects that I have designed over the years and that I am currently working on.",
     "see_more": "See more projects",
     "more_projects": "Other Note Worthy Projects"
+  },
+  "footer": {
+    "desc": "Want something like this?",
+    "contact_me": "Get In Touch"
   }
 }

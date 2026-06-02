@@ -10,7 +10,7 @@
       "year": "2026",
       "preview": "https://jorgepliesa.itch.io/ascension",
       "code": "",
-      "thumbnail": "/image/projects/web/intervyou/intervyou-thumbnail.jpg",
+      "thumbnail": "/image/projects/Ascension/ascension.png",
       "images": [],
       "tech": [
         "C++",
@@ -39,7 +39,7 @@
           ],
           "images": [
             "/image/projects/Ascension/sala2.png",
-            "/image/projects/Ascension/imagen15.png",
+            "/image/projects/Ascension/Imagen15.png",
             "/image/projects/Ascension/entrenamiento.png",
             "/image/projects/Ascension/evento.png",
             "/image/projects/Ascension/menu2.png"
@@ -62,8 +62,8 @@
           "text": "Sección sobre la tanda de penaltis diseñados en 3D para aportar mayor inmersión y variedad a la resolución de partidos empatados. Implementado a más bajo nivel con OpenGL moderno, usando un phong shading y modelos 3D sencillos. La portería esta dividida en 6 secciones, y se traza un rayo desde el puntero a la portería, haciendo una transformación 2D a 3D para calcular si el portero para el balón o no.",
           "images": [
             "/image/projects/Ascension/Penalty.mp4",
-            "/image/projects/Ascension/imagen16.png",
-            "/image/projects/Ascension/imagen17.png"
+            "/image/projects/Ascension/Imagen16.png",
+            "/image/projects/Ascension/Imagen17.png"
           ]
         }
       ]
@@ -79,7 +79,7 @@
       "year": "2026",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/intervyou/intervyou-thumbnail.jpg",
+      "thumbnail": "/image/projects/tfg/welcome.jpg",
       "images": [],
       "tech": [
         "React Native + Expo",
@@ -107,7 +107,7 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/intervyou/intervyou-thumbnail.jpg",
+      "thumbnail": "/image/fondo1.jpg",
       "images": [],
       "tech": [
         "MySQL",
@@ -136,7 +136,7 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/intervyou/intervyou-thumbnail.jpg",
+      "thumbnail": "/image/fondo2.jpg",
       "images": [],
       "tech": [
         "React",
@@ -164,7 +164,7 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/intervyou/intervyou-thumbnail.jpg",
+      "thumbnail": "/image/fondo2.jpg",
       "images": [],
       "tech": [
         "GNS3",
