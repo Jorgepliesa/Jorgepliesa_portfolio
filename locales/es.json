@@ -9,7 +9,8 @@
   },
   "home": {
     "hello": "Hola,",
-    "desc_1": "Hola, soy Jorge, apasionado del software (C++, Java, React, etc) y los videojuegos. Me considero un profesional altamente resiliente y dedicado, con una capacidad innata para mantener la calma en entornos de alta presión y guiar proyectos hacia el éxito. Destaco por mi facilidad para el trabajo en equipo y por construir relaciones de confianza basadas en el respeto mutuo.",
+    "desc_pc": "Hola, soy Jorge, apasionado del software (C++, Java, React, etc) y los videojuegos. Me considero un profesional altamente resiliente y dedicado, con una capacidad innata para mantener la calma en entornos de alta presión y guiar proyectos hacia el éxito. Destaco por mi facilidad para el trabajo en equipo y por construir relaciones de confianza basadas en el respeto mutuo. Me esfuerzo continuamente aprendiendo nuevas tecnologías y aplicándolas para construir soluciones eficientes y escalables.",
+    "desc_mobile": "Hola, soy Jorge, apasionado del software y los videojuegos. Me considero un profesional altamente resiliente y dedicado.",
     "desc_2": "Me esfuerzo continuamente aprendiendo nuevas tecnologías y aplicándolas para construir soluciones eficientes y escalables.",
     "about_me": "Sobre mí",
     "desc_about_me": "A continuación una breve introducción sobre mí, mis habilidades y mi experiencia.",

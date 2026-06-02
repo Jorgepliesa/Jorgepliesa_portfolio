@@ -3,7 +3,7 @@
 // Licensed under the GNU GPL v3.0. See LICENSE for details.
 
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -28,7 +28,7 @@ import { useLanguage } from "@/context/LanguageContext";
 function ScrollIndicator() {
 	const { activeIndex } = useFullPage();
 	const [dismissed, setDismissed] = useState(false);
-
+	
 	useEffect(() => {
 		if (activeIndex !== 0) setDismissed(true);
 	}, [activeIndex]);
@@ -65,10 +65,12 @@ function ScrollIndicator() {
 
 const MyPage = () => {
 	const { t } = useLanguage();
+	const [isExpanded, setIsExpanded] = useState(false);
+
 	return (
 		<FullPageWrapper>
 			<Section>
-				<div className="mx-auto w-[82%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-10 overflow-hidden">
+				<div className="mx-auto w-[90%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-10 overflow-hidden">
 					<motion.div
 						className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
 						initial={{ x: -100, opacity: 0 }}
@@ -76,7 +78,7 @@ const MyPage = () => {
 						transition={{
 							type: "spring",
 						}}>
-						<div className="block md:hidden col-span-1 mx-auto my-10">
+						<div className="block md:hidden col-span-1 mx-auto mt-2 mb-8">
 							<div className="bg-slate-500 rounded-full h-60 w-60 grayscale hover:grayscale-0 transition-all ease duration-300">
 								<Image
 									src={Me}
@@ -89,7 +91,7 @@ const MyPage = () => {
 							</div>
 						</div>
 						<motion.h3
-							className="uppercase text-xl mb-3 font-normal text tracking-[.5rem] text-gray-500"
+							className="uppercase text-xs md:text-xl mb-3 font-normal text tracking-[.5rem] text-gray-500"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -99,7 +101,7 @@ const MyPage = () => {
 							Jorge Pérez Liesa
 						</motion.h3>
 						<motion.h1
-							className="text-black text-4xl md:text-6xl lg:text-6xl 2xl:text-8xl font-bold my-2 md:my-5"
+							className="text-black text-base md:text-6xl lg:text-6xl 2xl:text-8xl font-bold my-2 md:my-5"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -111,17 +113,35 @@ const MyPage = () => {
 							Software Developer
 						</motion.h1>
 						<motion.p
-    						className="title text-xs md:text-md 2xl:text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem]"							initial={{ x: -100, opacity: 0 }}
+							className="title text-ms md:text-md 2xl:text-xl mt-4 tracking-wider text-gray-400 leading-[1.7rem]"
+							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
 								delay: 0.4,
 								type: "spring",
-							}}>
-							{t('home.desc_1')} 
-							    <span className="hidden md:inline"> {t('home.desc_2')}</span>
+							}}
+						>
+							{/* En móvil, si no está expandido, corta el texto. En PC (md:) siempre muestra el texto entero */}
+							<span className="md:hidden">
+								{isExpanded ? t('home.desc_pc') : `${t('home.desc_mobile')} `}
+							</span>
+							
+							{/* Este bloque solo existe en PC y siempre muestra la versión larga */}
+							<span className="hidden md:inline title text-base">
+								{t('home.desc_pc')}
+							</span>
+
+							{/* Botón interactivo de "..." que solo aparece en móvil */}
+							<button
+								onClick={() => setIsExpanded(!isExpanded)}
+								className="inline-block md:hidden ml-1 text-[#39ff14] font-bold focus:outline-none hover:underline"
+								aria-label={isExpanded ? "Read less" : "Read more"}
+							>
+								{isExpanded ? " [show less]" : "..."}
+							</button>
 						</motion.p>
 						<motion.div
-							className="buttons flex flex-row justify-center items-center space-x-4 mt-10"
+							className="buttons flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mt-10 w-full max-w-md mx-auto px-6 md:px-0"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -164,8 +184,8 @@ const MyPage = () => {
 				</div>
 			</Section>
 			<Section>
-				<div className="relative md:h-screen w-screen gap-4 flex justify-center items-center flex-col overflow-hidden">
-					<div className="z-0 mb-48 md:mb-0  md:absolute md:top-1/2  md:right-[10%] md:-translate-y-1/2">
+				<div className="relative min-h-screen md:h-screen w-screen gap-8 md:gap-4 flex flex-col justify-start md:justify-center items-center overflow-hidden py-10 md:py-0">
+					<div className="z-0 relative md:absolute md:top-1/2 md:right-[10%] md:-translate-y-1/2">
 						<motion.div
 							className="relative bg-slate-300 rounded-sm h-[400px] md:h-[60vh] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
 							initial={{
@@ -207,7 +227,7 @@ const MyPage = () => {
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title  text-base mt-2 tracking-wider text-gray-400 leading-snug mb-3 max-w-[600px]"
+							className="title  text-base md:text-xl tracking-wider text-gray-400 leading-snug mb-3 max-w-[1000px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -274,7 +294,7 @@ const MyPage = () => {
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title text-base md:text-xl mt-2 tracking-wider text-gray-400 leading-snug mb-3 max-w-[500px]"
+							className="title text-base md:text-xl mt-2 tracking-wider text-gray-400 leading-snug mb-3 max-w-[1000px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -341,7 +361,7 @@ const MyPage = () => {
 						</motion.h1>
 						<Hr />
 						<motion.p
-							className="title text-sm md:text-xl mt-4 tracking-wider text-gray-400 leading-relaxed max-w-[500px]"
+							className="title text-sm md:text-xl mt-4 tracking-wider text-gray-400 leading-relaxed max-w-[1000px]"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
