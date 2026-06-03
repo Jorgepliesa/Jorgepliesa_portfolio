@@ -8,10 +8,12 @@ import FixedButon from "@/components/FixedButton";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import projectES from "@/json/dataES.json";
 import projectEN from "@/json/dataEN.json";
+import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
 
 export default function Page() {
-	const Projects = useLanguage() === "es" ? projectES : projectEN;
+	const { t, language } = useLanguage();
+	const Projects = language === "es" ? projectES : projectEN;
 	const projects = Projects.Projects;
 	return (
 		<>
