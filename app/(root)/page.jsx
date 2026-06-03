@@ -70,7 +70,7 @@ const MyPage = () => {
 	return (
 		<FullPageWrapper>
 			<Section>
-				<div className="mx-auto w-[90%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-2 p-4 md:p-10 overflow-hidden pt-16 md:pt-0">
+				<div className="mx-auto w-[90%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-2 p-4 md:p-10 overflow-hidden md:pt-0">
 					<motion.div
 						className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
 						initial={{ x: -100, opacity: 0 }}

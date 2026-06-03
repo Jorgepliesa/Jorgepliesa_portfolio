@@ -70,9 +70,9 @@
     },
     {
       "show": true,
-      "title": "TFG: App fitness gamificada para supervivientes de cáncer pediátrico",
+      "title": "TFG: Fitness Game ",
       "desc": [
-        "Aplicación híbrida tanto web como móvil diseñada con React Native + NestJS",
+        "App híbrida gamificada para la motivación de actividad física adaptada en supervivientes de cáncer pediátrico.",
         "La baja adherencia a la actividad física en pacientes supervivientes de cáncer pediátrico puede ser un factor crítico para su recuperación, pronóstico y calidad de vida a largo plazo. Por ello, se persigue favorecer la adherencia a la actividad física adaptándose a la condición física del menor y a su progresión individual, mediante la gamificación e intervención digital. Se desarrollará un modelo para la creación de rutinas personalizada junto con otro modelo ya existente compatible con datos clínicos estandarizados extraídos de sensores. Además permitirá ver la trazabilidad y ser monitorizado por los responsables sanitarios o los tutores legales."
       ],
       "goal": "",
@@ -84,7 +84,8 @@
       "tech": [
         "React Native + Expo",
         "NestJS + Express",
-        "PostgreSQL + TimeScaleDB"
+        "PostgreSQL + TimeScaleDB",
+        "Web & Mobile"
       ],
       "slug": "FitnessApp",
       "category": [

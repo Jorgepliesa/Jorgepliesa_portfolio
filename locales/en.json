@@ -9,7 +9,8 @@
   },
   "home": {
     "hello": "Hello,",
-    "desc_1": "I am an enthusiastic Computer Engineer with a strong passion for Software Development.",
+    "desc_pc": "Hi, I'm Jorge, passionate about software (C++, Java, React, etc.) and video games. I consider myself a highly resilient and dedicated professional, with an innate ability to remain calm in high-pressure environments and guide projects to success. I excel at teamwork and building trusting relationships based on mutual respect. I continuously strive to learn new technologies and apply them to build efficient and scalable solutions.",
+    "desc_mobile": "Hi, I'm Jorge, passionate about software and video games. I consider myself a highly resilient and dedicated professional.",
     "desc_2": "I continuously strive to learn new technologies and apply them to build efficient, scalable solutions.",
     "about_me": "About Me",
     "desc_about_me": "Here is a brief introduction about myself, my skills, and my experience.",
@@ -81,7 +82,7 @@
     "desc": "Projects that I have designed over the years and that I am currently working on.",
     "see_more": "See more projects",
     "more_projects": "Other Note Worthy Projects",
-    "desc_highlight1": "For a university group project, we designed a roguelike football video game from scratch. Designed in C++, we built our own graphics engine using OpenGL and SFML, implementing custom physics and a challenging AI for opponents. The game features procedurally generated levels, unique power-ups, and addictive gameplay that combines strategy and action in every match. The game has a 2D pixel art style, with a 3D section for penalty kicks.",
+    "desc_highlight1": "For a university group project, we spent 3 months designing a roguelike football video game from scratch. Designed in C++, we built our own graphics engine using OpenGL and SFML, implementing custom physics and a challenging AI for opponents. The game features procedurally generated levels, unique power-ups, and addictive gameplay that combines strategy and action in every match. The game has a 2D pixel art style, with a 3D section for penalty kicks.",
     "desc_highlight2": "I highlight this project because video games involve all areas of computer science, from algorithm design and code optimization to graphic design and artificial intelligence, among others. Furthermore, it's a project that allowed me to learn and apply a great deal of technical knowledge in a practical and creative context.",
     "description": "Description",
     "goal": "Goal"
