@@ -96,7 +96,7 @@ function SkillCard({ skill, isSelected, onClick }) {
 			onClick={onClick}
 			className={`relative cursor-pointer group p-6 rounded-2xl border transition-all duration-300 ${
 				isSelected
-					? "bg-white/20 border-black border-2 shadow-lg"
+					? "bg-white/50 border-black border-2 shadow-lg"
 					: "bg-white/10 border-gray-300/20 hover:bg-white/20 hover:border-gray-300/30"
 			}`}
 			whileHover={{ scale: 1.03 }}
@@ -120,7 +120,7 @@ function SkillCard({ skill, isSelected, onClick }) {
 					<h3 className="font-semibold text-black text-lg mb-2">
 						{skill.title}
 					</h3>
-					<p className="text-gray-600 text-sm leading-relaxed">
+					<p className="text-gray-300 text-sm leading-relaxed">
 						{skill.description}
 					</p>
 				</div>

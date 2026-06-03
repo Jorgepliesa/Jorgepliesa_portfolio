@@ -169,9 +169,11 @@ function Page(props) {
     const params = use(props.params);
     const router = useRouter();
     const [data, setData] = useState(null);
-	const {t, language} = useLanguage(); 
+	const {t, language} = useLanguage();
+	const jsonData = language === "es" ? projectES : projectEN;
+	console.log("language en Page:", language);
     useEffect(() => {
-		const jsonData = language === "es" ? projectES : projectEN;
+		setData(null);
 		const selectedData = jsonData.Projects.find(
 			(item) => item.slug === params.slug
 		);
@@ -180,7 +182,7 @@ function Page(props) {
 		} else {
 			setData(selectedData);
 		}
-	}, [params.slug], language);
+	}, [params.slug, language]);
 
     if (data === "404") {
 		return (

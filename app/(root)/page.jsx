@@ -70,7 +70,7 @@ const MyPage = () => {
 	return (
 		<FullPageWrapper>
 			<Section>
-				<div className="mx-auto w-[90%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-10 overflow-hidden pt-16 md:pt-0">
+				<div className="mx-auto w-[90%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-2 p-4 md:p-10 overflow-hidden pt-16 md:pt-0">
 					<motion.div
 						className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
 						initial={{ x: -100, opacity: 0 }}
@@ -78,7 +78,7 @@ const MyPage = () => {
 						transition={{
 							type: "spring",
 						}}>
-						<div className="block md:hidden col-span-1 mx-auto mt-2 mb-8">
+						<div className="block md:hidden col-span-1 mx-auto mt-2 mb-2">
 							<div className="bg-slate-500 rounded-full h-60 w-60 grayscale hover:grayscale-0 transition-all ease duration-300">
 								<Image
 									src={Me}
@@ -375,7 +375,7 @@ const MyPage = () => {
 							{t('home.desc_get_in_touch')}
 						</motion.p>
 						<motion.p
-							className="title text-base md:text-xl mt-3 tracking-wider text-gray-500 leading-relaxed mb-5"
+							className="title text-base md:text-xl tracking-wider text-gray-500 leading-relaxed mb-5"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
