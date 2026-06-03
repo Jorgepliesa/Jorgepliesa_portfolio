@@ -1,4 +1,3 @@
-"use client";
 import projectES from "@/json/dataES.json";
 import jsonData from "@/json/dataEN.json";
 import { useLanguage } from "@/context/LanguageContext";
