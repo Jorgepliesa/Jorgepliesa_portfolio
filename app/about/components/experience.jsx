@@ -2,8 +2,9 @@
 import Hr from "@/components/Hr";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const experiences = [
+const getExperiences = (t) => [
 	{
 		id: 1,
 		startDate: "Jul 2025",
@@ -18,9 +19,8 @@ const experiences = [
 	}
 ];
 
-experiences.reverse();
-
 function Title() {
+	const { t } = useLanguage();
 	return (
 		<div className="mt-16 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
 			<div className="flex justify-center items-center flex-col my-5 self-start">
@@ -39,7 +39,7 @@ function Title() {
 						delay: 0.7,
 						type: "spring",
 					}}>
-					Professional Experience
+					{t('about.experience')}
 				</motion.h1>
 			</div>
 		</div>
@@ -140,6 +140,8 @@ function Wrapper({ children }) {
 
 export default function Experience() {
 	const [showAll, setShowAll] = useState(false);
+	const {t} = useLanguage();
+	const experiences = getExperiences(t).reverse();
 	const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
 	return (

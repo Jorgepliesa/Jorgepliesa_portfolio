@@ -1,4 +1,4 @@
-const projects = require("./json/data.json");
+const projects = require("./json/dataES.json");
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {

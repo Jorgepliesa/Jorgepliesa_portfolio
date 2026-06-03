@@ -20,6 +20,7 @@ function Title() {
 }
 
 export default function About() {
+	const { t } = useLanguage();
 	return (
 		<>
 			<Title />
@@ -116,38 +117,45 @@ export default function About() {
 						Jorge Pérez Liesa
 					</h2>
 					<p className="text-gray-400 text-justify body text-lg leading-relaxed">
-						I am a{" "}
+					{/* PÁRRAFO 1 */}
+					{t('about.bio_p1_1')}
 					<span className="text-white font-medium">
-						Software & Game Developer{" "}
+						{t('about.bio_p1_bold1')}
 					</span>
-					specialized in building immersive digital experiences and secure systems, bridging the gap between{" "}
+					{t('about.bio_p1_2')}
 					<span className="text-white font-medium">
-						Modern Web Ecosystems and Core Software Architectures
+						{t('about.bio_p1_bold2')}
 					</span>
-					. A Computer Science graduate from the{" "}
+					{t('about.bio_p1_3')}
 					<span className="text-white font-medium">
-						University of Zaragoza
+						{t('about.bio_p1_bold3')}
 					</span>
-					, my academic and professional journey is defined by tackling complex logic, ranging from low-level graphics optimization in C++ to full-stack application development.
+					{t('about.bio_p1_4')}
+					
 					<br />
 					<br />
-					Recently, I engineered highly responsive web products as a Front-End Developer at{" "}
+					
+					{/* PÁRRAFO 2 */}
+					{t('about.bio_p2_1')}
 					<span className="text-white font-medium">
-						Nervia Consultores
+						{t('about.bio_p2_bold1')}
 					</span>
-					, where I drove test coverage to 95% and optimized software deployment cycles via Azure DevOps. Simultaneously, I am leading the technical architecture of my thesis: a gamified cross-platform mobile application powered by{" "}
+					{t('about.bio_p2_2')}
 					<span className="text-white font-medium">
-						React Native and NestJS
+						{t('about.bio_p2_bold2')}
 					</span>
-					, designed to motivate and support pediatric cancer survivors. 
+					{t('about.bio_p2_3')}
+					
 					<br />
 					<br />
-					I am driven by clean code, cyber-defense patterns, and interactive design. I am currently seeking full-time opportunities in software engineering, cibersecurity, or game development—ready for{" "}
+					
+					{/* PÁRRAFO 3 */}
+					{t('about.bio_p3_1')}
 					<span className="text-white font-medium">
-						100% remote roles or relocation wherever it takes
+						{t('about.bio_p3_bold1')}
 					</span>
 					.
-					</p>
+				</p>
 					{/* <Card /> */}
 				</motion.div>
 			</div>

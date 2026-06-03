@@ -2,7 +2,8 @@
 import { useState, useEffect, use, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import jsonData from "@/json/data.json";
+import projectES from "@/json/dataES.json";
+import projectEN from "@/json/dataEN.json";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -168,6 +169,8 @@ function Page(props) {
     const params = use(props.params);
     const router = useRouter();
     const [data, setData] = useState(null);
+	const jsonData = useLanguage() === "es" ? projectES : projectEN;
+	const {t} = useLanguage(); 
     useEffect(() => {
 		const selectedData = jsonData.Projects.find(
 			(item) => item.slug === params.slug
@@ -320,7 +323,7 @@ function Page(props) {
 					</div>
 					<div className="flex justify-start items-start flex-col mb-5 ">
 						<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
-							Description
+							{t('projects.description')}
 						</h2>
 						{data.desc.map((desc, index) => (
 							<p

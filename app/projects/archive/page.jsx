@@ -6,10 +6,12 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import FixedButon from "@/components/FixedButton";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import Projects from "@/json/data.json";
+import projectES from "@/json/dataES.json";
+import projectEN from "@/json/dataEN.json";
 import Link from "next/link";
 
 export default function Page() {
+	const Projects = useLanguage() === "es" ? projectES : projectEN;
 	const projects = Projects.Projects;
 	return (
 		<>

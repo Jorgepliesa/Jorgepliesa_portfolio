@@ -173,10 +173,10 @@ export default function Education() {
 						</div>
 						<div>
 							<h2 className="font-semibold text-xl">
-								Universidad de Zaragoza
+								{t('about.university')}
 							</h2>
 							<h3 className="text-md font-normal mb-3">
-								Escuela de Ingeniería y Arquitectura (EINA) | Computer Engineering
+								Escuela de Ingeniería y Arquitectura (EINA) | {t('about.studies')}
 							</h3>
 							<div className="gap-4 mb-4 flex items-stretch md:h-[300px] xl:h-[400px]">
 								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
@@ -208,34 +208,41 @@ export default function Education() {
 								</div>
 							</div>
 							<div className="flex items-center gap-2">
-								<p className="text-gray-400 text-justify body text-lg">
-									I graduated with a Bachelor’s in{" "}
+								<p className="text-gray-400 text-justify body text-lg leading-relaxed">
+									{/* PÁRRAFO 1 */}
+									{t('about.edu_p1_1')}
 									<span className="text-white font-medium">
-										Computer Engineering
-									</span>{" "}
-									from the{" "}
-									<span className="text-white font-medium">
-										University of Zaragoza
+										{t('about.edu_p1_bold1')}
 									</span>
-									, an institution widely recognized for its highly rigorous and demanding engineering curriculum. And specialized in Computing, which is related to maths, make optimal algorithms and so on. My academic journey was defined by a profound sense of{" "}
+									{t('about.edu_p1_2')}
 									<span className="text-white font-medium">
-										dedication, resilience, and hard work
+										{t('about.edu_p1_bold2')}
 									</span>
-									, turning complex technical challenges into milestones through relentless effort and perseverance.
-									<br />
-									<br />
-									A key highlight of my education was spending the 2023-2024 academic year abroad at the{" "}
+									{t('about.edu_p1_3')}
 									<span className="text-white font-medium">
-										University of Campania Luigi Vanvitelli in Naples (Italy)
-									</span>{" "}
-									under the Erasmus program, an invaluable experience that expanded my adaptability and international perspective. 
-									<br />
-									<br />
-									The pinnacle of my degree is my Bachelor’s Thesis (TFG): a fully functional, gamified cross-platform mobile application built with{" "}
-									<span className="text-white font-medium">
-										React Native and NestJS
+										{t('about.edu_p1_bold3')}
 									</span>
-									. Developed to boost physical activity motivation in pediatric cancer survivors, this project allowed me to bridge deep technical execution with meaningful social impact. My education has provided me with a rock-solid engineering foundation, ready to be deployed into production-grade software solutions.
+									{t('about.edu_p1_4')}
+									
+									<br />
+									<br />
+									
+									{/* PÁRRAFO 2 */}
+									{t('about.edu_p2_1')}
+									<span className="text-white font-medium">
+										{t('about.edu_p2_bold1')}
+									</span>
+									{t('about.edu_p2_2')}
+									
+									<br />
+									<br />
+									
+									{/* PÁRRAFO 3 */}
+									{t('about.edu_p3_1')}
+									<span className="text-white font-medium">
+										{t('about.edu_p3_bold1')}
+									</span>
+									{t('about.edu_p3_2')}
 								</p>
 							</div>
 							<div className="flex flex-wrap gap-2 mt-4 text-sm">

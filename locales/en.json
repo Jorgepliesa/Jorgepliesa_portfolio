@@ -30,13 +30,60 @@
     "desc_about_me": "Here is a brief introduction about myself, my skills, and my experience.",
     "title": "Who Am I?",
     "desc_skills": "Explore my technical skills across different domains. Click on any category to see the specific technologies and tools I work with.",
-    "title_education" : "Get to know more about my educational background."
+    "title_education" : "Get to know more about my educational background.",
+  
+    "skill_1": "Pure languages, especially low-level and general-purpose languages",
+    "skill_2": "Building modern, responsive and cross-platform applications",
+    "skill_3": "Infrastructure, Data & CI/CD",
+    "skill_4": "Cyber-Defense, Hardware Interfaces & semantics",
+
+    "bio_p1_1": "I am a ",
+    "bio_p1_bold1": "Software & Game Developer ",
+    "bio_p1_2": "specialized in building immersive digital experiences and secure systems, bridging the gap between ",
+    "bio_p1_bold2": "Modern Web Ecosystems and Core Software Architectures",
+    "bio_p1_3": ". A Computer Science graduate from the ",
+    "bio_p1_bold3": "University of Zaragoza",
+    "bio_p1_4": ", my academic and professional journey is defined by tackling complex logic, ranging from low-level graphics optimization in C++ to full-stack application development.",
+    
+    "bio_p2_1": "Recently, I engineered highly responsive web products as a Front-End Developer at ",
+    "bio_p2_bold1": "Nervia Consultores",
+    "bio_p2_2": ", where I drove test coverage to 95% and optimized software deployment cycles via Azure DevOps. Simultaneously, I am leading the technical architecture of my thesis: a gamified cross-platform mobile application powered by ",
+    "bio_p2_bold2": "React Native and NestJS",
+    "bio_p2_3": ", designed to motivate and support pediatric cancer survivors.",
+    
+    "bio_p3_1": "I am driven by clean code, cyber-defense patterns, and interactive design. I am currently seeking full-time opportunities in software engineering, cybersecurity, or game development—ready for ",
+    "bio_p3_bold1": "100% remote roles or relocation wherever it takes",
+
+    "experience" : "Professional Experience",
+    "desc_experience_1": "I participated in various front-end projects using Angular and Ionic, ensuring responsive web design. I also managed automated testing and test management, achieving excellence and raising the product quality to 95% coverage, exceeding required standards. Finally, I efficiently managed the software development lifecycle and version control, resulting in optimized delivery times, reducing them by half and improving overall efficiency for the company.",
+
+    "studies": "Computer Engineering",
+    "university": "University of Zaragoza",
+    
+    "edu_p1_1": "I graduated with a Bachelor’s in ",
+    "edu_p1_bold1": "Computer Engineering",
+    "edu_p1_2": " from the ",
+    "edu_p1_bold2": "University of Zaragoza",
+    "edu_p1_3": ", an institution widely recognized for its highly rigorous and demanding engineering curriculum. I specialized in Computing, which is related to maths, making optimal algorithms and advanced structures. My academic journey was defined by a profound sense of ",
+    "edu_p1_bold3": "dedication, resilience, and hard work",
+    "edu_p1_4": ", turning complex technical challenges into milestones through relentless effort and perseverance.",
+    
+    "edu_p2_1": "A key highlight of my education was spending the 2023-2024 academic year abroad at the ",
+    "edu_p2_bold1": "University of Campania Luigi Vanvitelli in Naples (Italy)",
+    "edu_p2_2": " under the Erasmus program, an invaluable experience that expanded my adaptability and international perspective.",
+    
+    "edu_p3_1": "The pinnacle of my degree is my Bachelor’s Thesis (TFG): a fully functional, gamified cross-platform mobile application built with ",
+    "edu_p3_bold1": "React Native and NestJS",
+    "edu_p3_2": ". Developed to boost physical activity motivation in pediatric cancer survivors, this project allowed me to bridge deep technical execution with meaningful social impact. My education has provided me with a rock-solid engineering foundation, ready to be deployed into production-grade software solutions."
   },
   "projects" : {
     "title": "My Projects",
     "desc": "Projects that I have designed over the years and that I am currently working on.",
     "see_more": "See more projects",
-    "more_projects": "Other Note Worthy Projects"
+    "more_projects": "Other Note Worthy Projects",
+    "desc_highlight1": "For a university group project, we designed a roguelike football video game from scratch. Designed in C++, we built our own graphics engine using OpenGL and SFML, implementing custom physics and a challenging AI for opponents. The game features procedurally generated levels, unique power-ups, and addictive gameplay that combines strategy and action in every match. The game has a 2D pixel art style, with a 3D section for penalty kicks.",
+    "desc_highlight2": "Resalto este proyecto puesto que en un videojuego es donde se involucran todas las areas de la informática, desde el diseño de algoritmos, la optimización de código, el diseño gráfico, la inteligencia artificial, entre otros. Además, es un proyecto que me permitió aprender y aplicar una gran cantidad de conocimientos técnicos en un contexto práctico y creativo.",
+    "description": "Description"
   },
   "footer": {
     "desc": "Want something like this?",

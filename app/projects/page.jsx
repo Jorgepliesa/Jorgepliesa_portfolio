@@ -9,11 +9,12 @@ import Image from "next/image";
 import Intervyou1 from "@/public/image/projects/Ascension/Imagen1.png";
 import Intervyou2 from "@/public/image/projects/Ascension/ascension2.png";
 import Intervyou3 from "@/public/image/projects/Ascension/ascension3.png";
-import ProjectAll from "@/public/image/projects.png";
+import ProjectAll from "@/public/image/projects.jpg";
 
 import Hr from "@/components/Hr";
 import ProjectCard from "./components/ProjectCard";
-import Projects from "@/json/data.json";
+import projectES from "@/json/dataES.json";
+import projectEN from "@/json/dataEN.json";
 import FixedButon from "@/components/FixedButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -27,6 +28,7 @@ const category = {
 
 export default function Page() {
 	const [activeCategory, setActiveCategory] = useState(null);
+	const Projects = useLanguage() === "es" ? projectES : projectEN;
 	const projects = Projects.Projects.filter((item) => item.show === true);
 	const { t } = useLanguage();
 
@@ -178,17 +180,9 @@ export default function Page() {
 							Ascension - Roguelike/Arcade Football Videogame 
 						</h2>
 						<p className="text-gray-400 text-justify body text-lg">
-							Para un proyecto de la universidad en grupo, diseñamos un videojuego de fútbol 
-							con mecánicas de roguelike desde cero. Diseñado en C++, construimos nuestro propio
-							motor gráfico utilizando OpenGL y SFML, implementando físicas personalizadas y una IA 
-							desafiante para los oponentes. El juego presenta niveles generados proceduralmente, 
-							power-ups únicos y una jugabilidad adictiva que combina estrategia y acción en cada partido.
-							El juego tiene un apartado artístico pixel art en 2D, con una sección en 3D para jugar los penaltis.
+							{t('projects.desc_highlight1')}
 							<br /> <br />
-							Resalto este proyecto puesto que en un videojuego es donde se involucran todas las areas de la informática, 
-							desde el diseño de algoritmos, la optimización de código, el diseño gráfico, la inteligencia artificial,
-							 entre otros. Además, es un proyecto que me permitió aprender y aplicar una gran cantidad de conocimientos 
-							 técnicos en un contexto práctico y creativo.
+							{t('projects.desc_highlight2')}
 						</p>{" "}
 						<div className="mt-3">
 							<Button variation="primary">

@@ -1,0 +1,184 @@
+{
+  "Projects": [
+    {
+      "show": true,
+      "title": "Ascension",
+      "desc": [
+        "Ascension is a single-player football-themed roguelike game where the player moves around a randomly generated map with different rooms in which to obtain items and upgrades through various mechanics, and plays football matches against different rivals to progress in the game. In the matches, the player controls a small team made up of three outfield players and a goalkeeper, and faces an opposing team with the same composition controlled by AI."
+      ],
+      "goal": "The objective of the game is to climb from the First Federation to the First Division and win the championship, completing a total of three leagues per game. Each league consists of a randomly generated map with an increasing number of matches that must be won to unlock the final boss room, which is a match with special conditions that must be overcome to advance to the next league. The game ends when the final match of the last league is won; the credits roll and the player returns to the main menu, allowing them to start a new game.",
+      "year": "2026",
+      "preview": "",
+      "code": "",
+      "thumbnail": "/image/projects/Ascension/ascension.png",
+      "images": [],
+      "tech": [
+        "C++",
+        "OpenGL",
+        "SFML"
+      ],
+      "slug": "Ascension",
+      "category": [
+        1,
+        2
+      ],
+      "platforms": [
+        "linux",
+        "windows",
+        "gamepad",
+        "keyboard"
+      ],
+      "trailer": "/image/projects/Ascension/TrailerAscension.mp4",
+      "sections": [
+        {
+          "title": "Roguelike Structure",
+          "type": "text_image",
+          "text": [
+            "You can see the UI of the game, each room on the map: chest, bets, rival match, penalties, rigging and the promotion match (boss), the training sessions and npcs with which you can talk. There are events that can appear to you such as an assault by some ultras who beat you up and steal money, which can be reduced through the player's decision.",
+            "The map is randomly generated on each run, using a BagOfWords with different football-related words to generate room and event names, and using different procedural generation algorithms to create the map structure and room layout. The player can choose between different routes to advance through the map, adding a strategic element when deciding which rooms to visit and which items to obtain."
+          ],
+          "images": [
+            "/image/projects/Ascension/sala2.png",
+            "/image/projects/Ascension/Imagen15.png",
+            "/image/projects/Ascension/entrenamiento.png",
+            "/image/projects/Ascension/evento.png",
+            "/image/projects/Ascension/menu2.png"
+          ]
+        },
+        {
+          "title": "Football Gameplay & AI",
+          "type": "text_image",
+          "text": [
+           "A bit of gameplay footage is shown of the matches, where 4 players participate per team, although this is scalable, and they can perform 3 types of shots: normal, high, and curve, both for passing and shooting. They can also perform slide tackles to steal the ball. The statistics influence the player's speed, the probability of the shot going in the player's desired direction, etc. As the game progresses, the player's accuracy increases, and the opponents become stronger.",
+            "The AI ​​is managed with a state machine that allows it to adapt to different game situations, such as attacking, defending, counter-attacking, etc. In addition, each opponent has their own personality and playing style, which adds variety and challenge to the matches."
+          ],
+          "images": [
+            "/image/projects/Ascension/gameplay.mp4"
+          ]
+        },
+        {
+          "title": "3D Penalties",
+          "type": "text_image",
+          "text": "Section on the penalty shootout designed in 3D to provide greater immersion and variety in resolving tied matches. Implemented at a lower level with modern OpenGL, using phono shading and simple 3D models. The goal is divided into 6 sections, and a ray is drawn from the pointer to the goal, performing a 2D to 3D transformation to calculate whether the goalkeeper saves the ball or not.",
+          "images": [
+            "/image/projects/Ascension/Penalty.mp4",
+            "/image/projects/Ascension/Imagen16.png",
+            "/image/projects/Ascension/Imagen17.png"
+          ]
+        }
+      ]
+    },
+    {
+      "show": true,
+      "title": "TFG: App gamified fitness for pediatric cancer survivors",
+      "desc": [
+        "Hybrid web and mobile application designed with React Native + NestJS",
+        "Low adherence to physical activity in pediatric cancer survivors can be a critical factor for their recovery, prognosis, and long-term quality of life. Therefore, this project aims to promote adherence to physical activity by adapting to the child's physical condition and individual progress through gamification and digital intervention. A model for creating personalized routines will be developed, along with an existing model compatible with standardized clinical data extracted from sensors. This will also allow for traceability and monitoring by healthcare professionals or legal guardians."
+      ],
+      "goal": "",
+      "year": "2026",
+      "preview": "",
+      "code": "",
+      "thumbnail": "/image/projects/tfg/welcome.jpg",
+      "images": [],
+      "tech": [
+        "React Native + Expo",
+        "NestJS + Express",
+        "PostgreSQL + TimeScaleDB"
+      ],
+      "slug": "FitnessApp",
+      "category": [
+        1
+      ],
+      "platforms": [
+        "web",
+        "mobile"
+      ],
+      "trailer": "",
+      "sections": []
+    },
+    {
+      "show": true,
+      "title": "IoT Home Accident Detector",
+      "desc": [
+        "Using an Arduino and gas and temperature sensors, temperature and gas sensors connected to an Arduino board, they notify the user via a Telegram notification of the parameters and send alerts when it is dangerous."
+      ],
+      "goal": "",
+      "year": "2024",
+      "preview": "",
+      "code": "",
+      "thumbnail": "/image/fondo1.jpg",
+      "images": [],
+      "tech": [
+        "MySQL",
+        "Arduino",
+        "XAMPP",
+        "PHP",
+        "Apache",
+        "API Telegram"
+      ],
+      "slug": "ArduinoSystem",
+      "category": [
+        9
+      ],
+      "platforms": [
+      ],
+      "trailer": "",
+      "sections": []
+    },
+    {
+      "show": true,
+      "title": "Web Leisure Application about Zaragoza",
+      "desc": [
+        "A web-based leisure app where users can check what activities are available for the day, or filter them by category: cinema, art, restaurants, etc. They can also leave reviews and interact with each other."
+      ],
+      "goal": "",
+      "year": "2024",
+      "preview": "",
+      "code": "",
+      "thumbnail": "/image/fondo2.jpg",
+      "images": [],
+      "tech": [
+        "React",
+        "php",
+        "JavaScript",
+        "XAMPP"
+      ],
+      "slug": "AppOcio",
+      "category": [
+        1
+      ],
+      "platforms": [
+        "web"
+      ],
+      "trailer": "",
+      "sections": []
+    },
+{
+      "show": true,
+      "title": "Simulation of MITM Attack & ARP Poisoning",
+      "desc": [
+        "Simulation in a controlled environment of a MITM attack using two virtual machines and the graphical environment of GNS3, in relation to a cybersecurity subject"
+      ],
+      "goal": "",
+      "year": "2024",
+      "preview": "",
+      "code": "",
+      "thumbnail": "/image/fondo2.jpg",
+      "images": [],
+      "tech": [
+        "GNS3",
+        "VirtualBox",
+        "WireShark"
+      ],
+      "slug": "Ataque",
+      "category": [
+        9
+      ],
+      "platforms": [
+      ],
+      "trailer": "",
+      "sections": []
+    }
+  ]
+}

@@ -31,13 +31,60 @@
     "desc_about_me": "A continuación una breve introducción sobre mí, mis habilidades y mi experiencia.",
     "title": "¿Quién soy?",
     "desc_skills": "Explora mis habilidades técnicas en diferentes dominios. Haz clic en cualquier categoría para ver las tecnologías y herramientas específicas con las que trabajo.",
-    "title_education": "Conoce más sobre mi formación académica."
+    "title_education": "Conoce más sobre mi formación académica.",
+  
+    "skill_1": "Lenguajes puros, especialmente de bajo nivel y de propósito general",
+    "skill_2": "Desarrollo de aplicaciones modernas, responsivas y multiplataforma.",
+    "skill_3": "Infraestructura, Datos & CI/CD",
+    "skill_4": "Ciberdefensa, Interfaces de Hardware & semánticas",
+
+    "bio_p1_1": "Soy un ",
+    "bio_p1_bold1": "Desarrollador de Software y Videojuegos ",
+    "bio_p1_2": "especializado en crear experiencias digitales inmersivas y sistemas seguros, uniendo el mundo de los ",
+    "bio_p1_bold2": "Ecosistemas Web Modernos y las Arquitecturas de Software Core",
+    "bio_p1_3": ". Graduado en Ingeniería Informática por la ",
+    "bio_p1_bold3": "Universidad de Zaragoza",
+    "bio_p1_4": ", mi trayectoria académica y profesional se define por resolver lógica compleja, que va desde la optimización de gráficos de bajo nivel en C++ hasta el desarrollo de aplicaciones full-stack.",
+    
+    "bio_p2_1": "Recientemente, he diseñado productos web altamente reactivos como Desarrollador Front-End en ",
+    "bio_p2_bold1": "Nervia Consultores SL",
+    "bio_p2_2": ", donde elevé la cobertura de pruebas al 95% y optimicé los ciclos de despliegue de software mediante Azure DevOps. Simultáneamente, lidero la arquitectura técnica de mi trabajo de fin de grado: una aplicación móvil multiplataforma gamificada impulsada por ",
+    "bio_p2_bold2": "React Native y NestJS",
+    "bio_p2_3": ", diseñada para motivar y apoyar a niños supervivientes de cáncer pediátrico.",
+    
+    "bio_p3_1": "Me apasiona el código limpio, los patrones de ciberdefensa y el diseño interactivo. Actualmente busco oportunidades a tiempo completo en ingeniería de software, ciberseguridad o desarrollo de videojuegos, estando disponible para ",
+    "bio_p3_bold1": "roles 100% en remoto o reubicación geográfica inmediata",
+    
+    "experience" : "Experiencia Profesional",
+    "desc_experience_1": "Participé en diversos proyectos como front-end usando Angular + Ionic, donde me aseguré de realizar páginas web Responsive. Además me encargué del testing automatizado y control de pruebas logrando una excelencia y elevando la calidad del producto de un 95% de coverage, superando los estándares requeridos. Por último, gestioné de forma eficiente el ciclo de vida del software y el control de versiones dando lugar a una optimización de plazos de entrega reduciendo estos a la mitad de tiempo estipulado y consiguiendo una mayor eficiencia para la empresa.",
+
+    "studies": "Ingeniería Informática",
+    "university": "Universidad de Zaragoza",
+
+    "edu_p1_1": "Me gradué en Ingeniería ",
+    "edu_p1_bold1": "Informática",
+    "edu_p1_2": " por la ",
+    "edu_p1_bold2": "Universidad de Zaragoza",
+    "edu_p1_3": ", una institución ampliamente reconocida por la alta exigencia y rigurosidad de su plan de estudios en ingeniería. Me especialicé en la rama de Computación, la cual está estrechamente ligada a las matemáticas, el desarrollo de algoritmos óptimos y estructuras complejas. Mi trayectoria académica estuvo definida por un profundo sentido de ",
+    "edu_p1_bold3": "dedicación, resiliencia y esfuerzo constante",
+    "edu_p1_4": ", transformando desafíos técnicos complejos en grandes logros a través de la perseverancia diaria.",
+    
+    "edu_p2_1": "Un punto clave de mi formación fue cursar el año académico 2023-2024 en el extranjero, concretamente en la ",
+    "edu_p2_bold1": "Universidad de Campania Luigi Vanvitelli en Nápoles (Italia)",
+    "edu_p2_2": " bajo el programa Erasmus; una experiencia invaluable que expandió notablemente mi capacidad de adaptación y mi perspectiva internacional.",
+    
+    "edu_p3_1": "La cumbre de mi carrera es mi Trabajo de Fin de Grado (TFG): una aplicación móvil multiplataforma gamificada y totalmente funcional desarrollada con ",
+    "edu_p3_bold1": "React Native y NestJS",
+    "edu_p3_2": ". Diseñado para motivar y fomentar la actividad física en niños supervivientes de cáncer pediátrico, este proyecto me permitió fusionar una ejecución técnica profunda con un impacto social significativo. Mi formación me ha proporcionado una base de ingeniería sólida, lista para ser aplicada en soluciones de software de nivel de producción."
   },
   "projects" : {
     "title": "Mis Proyectos",
     "desc": "Proyectos que he diseñado a lo largo de los años y en los que estoy trabajando actualmente.",
     "see_more": "Ver más proyectos",
-    "more_projects": "Otros Proyectos Destacados"
+    "more_projects": "Otros Proyectos Destacados",
+    "desc_highlight1": "Para un proyecto de la universidad en grupo, diseñamos un videojuego de fútbol con mecánicas de roguelike desde cero. Diseñado en C++, construimos nuestro propio motor gráfico utilizando OpenGL y SFML, implementando físicas personalizadas y una IA desafiante para los oponentes. El juego presenta niveles generados proceduralmente, power-ups únicos y una jugabilidad adictiva que combina estrategia y acción en cada partido. El juego tiene un apartado artístico pixel art en 2D, con una sección en 3D para jugar los penaltis.",
+    "desc_highlight2": "Resalto este proyecto puesto que en un videojuego es donde se involucran todas las areas de la informática, desde el diseño de algoritmos, la optimización de código, el diseño gráfico, la inteligencia artificial, entre otros. Además, es un proyecto que me permitió aprender y aplicar una gran cantidad de conocimientos técnicos en un contexto práctico y creativo.",
+    "description": "Descripción"
   },
   "footer": {
     "desc": "¿Te interesa?",

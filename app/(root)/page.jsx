@@ -14,7 +14,7 @@ import Button from "@/components/Button";
 import Me from "@/public/image/me1.jpg";
 import MeAbout from "@/public/image/me2.jpg";
 import Setup from "@/public/image/setup.jpg";
-import ProjectAll from "@/public/image/projects.png";
+import ProjectAll from "@/public/image/projects.jpg";
 import Hr from "@/components/Hr";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -122,7 +122,11 @@ const MyPage = () => {
 							}}
 						>
 							{/* En móvil, si no está expandido, corta el texto. En PC (md:) siempre muestra el texto entero */}
-							<span className="md:hidden">
+							<span className={`md:hidden transition-all duration-300 ${
+								isExpanded 
+									? "text-[11px] body leading-relaxed text-gray-350" 
+									: "text-xs title leading-[1.7rem]"
+							}`}>
 								{isExpanded ? t('home.desc_pc') : `${t('home.desc_mobile')} `}
 							</span>
 							
@@ -141,7 +145,7 @@ const MyPage = () => {
 							</button>
 						</motion.p>
 						<motion.div
-							className="buttons flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mt-10 w-full max-w-md mx-auto px-6 md:px-0"
+							className="buttons text-xs flex flex-row justify-center md:justify-start items-center space-x-3 mt-8 w-full max-w-md mx-auto md:mx-0 px-4 md:px-0"
 							initial={{ x: -100, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{
@@ -214,7 +218,7 @@ const MyPage = () => {
 							/>
 						</motion.div>
 					</div>
-					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start text-start px-10 py-5 pb-10">
+					<div className="z-0 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start text-start px-10 py-5 pb-10">
 						<motion.h1
 							className="bg-black lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-4xl md:text-8xl font-bold"
 							initial={{ x: -100, opacity: 0 }}

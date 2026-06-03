@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { CodepenIcon, WebhookIcon, ActivityIcon, MobileIcon } from "./icons"
 import { useLanguage } from "@/context/LanguageContext";
-const skillCategories = {
+const getSkillCategories = (t) => ({
 	core: {
 		title: "Core Programming & Systems",
 		icon: CodepenIcon,
-		description: "Lenguajes puros, especialmente de bajo nivel y de propósito general",
+		description: t('about.skill_1'),
 		languages: [
 			{ name: "C++", highlight: true },
 			{ name: "Java", highlight: true },
@@ -32,7 +32,7 @@ const skillCategories = {
 	web: {
 		title: "Full-Stack Web & Mobile",
 		icon: MobileIcon,
-		description: "Building modern, responsive and cross-platform applications",
+		description: t('about.skill_2'),
 		languages: [
 			{ name: "React Native, Expo", highlight: true },
 			{ name: "NestJS, Express, TypeORM", highlight: true },
@@ -56,7 +56,7 @@ const skillCategories = {
 	Architecture: {
 		title: "Architecture, DevOps & Databases",
 		icon: WebhookIcon,
-		description: "Infrastructure, Data & CI/CD",
+		description: t('about.skill_3'),
 		languages: [
 			{ name: "Git", highlight: true },
 			{ name: "Azure DevOps", highlight: true },
@@ -78,7 +78,7 @@ const skillCategories = {
 	IT: {
 		title: "Networking & IoT",
 		icon: ActivityIcon,
-		description: "Cyber-Defense, Hardware Interfaces & semantics",
+		description: t('about.skill_4'),
 		languages: [
 			{ name: "WireShark", highlight: false },
 			{ name: "GNS3", highlight: false },
@@ -87,7 +87,7 @@ const skillCategories = {
 		],
 		tools: ["Arduino", "API Telegram" , "MAGERIT", "PILAR"],
 	},
-};
+});
 
 function SkillCard({ skill, isSelected, onClick }) {
 	const Icon = skill.icon;
@@ -216,6 +216,7 @@ function SkillDetails({ selectedSkill }) {
 export default function Skills() {
 	const [selectedCategory, setSelectedCategory] = useState("web");
 	const { t } = useLanguage();
+	const skillCategories = getSkillCategories(t);
 	return (
 		<div className="relative">
 			<div className="mx-auto container px-6 py-20">
