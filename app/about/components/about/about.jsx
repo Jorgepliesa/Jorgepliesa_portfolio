@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Card from "./spotify/card";
 import { motion } from "framer-motion";
