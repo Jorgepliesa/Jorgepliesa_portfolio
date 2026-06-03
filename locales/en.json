@@ -82,8 +82,9 @@
     "see_more": "See more projects",
     "more_projects": "Other Note Worthy Projects",
     "desc_highlight1": "For a university group project, we designed a roguelike football video game from scratch. Designed in C++, we built our own graphics engine using OpenGL and SFML, implementing custom physics and a challenging AI for opponents. The game features procedurally generated levels, unique power-ups, and addictive gameplay that combines strategy and action in every match. The game has a 2D pixel art style, with a 3D section for penalty kicks.",
-    "desc_highlight2": "Resalto este proyecto puesto que en un videojuego es donde se involucran todas las areas de la informática, desde el diseño de algoritmos, la optimización de código, el diseño gráfico, la inteligencia artificial, entre otros. Además, es un proyecto que me permitió aprender y aplicar una gran cantidad de conocimientos técnicos en un contexto práctico y creativo.",
-    "description": "Description"
+    "desc_highlight2": "I highlight this project because video games involve all areas of computer science, from algorithm design and code optimization to graphic design and artificial intelligence, among others. Furthermore, it's a project that allowed me to learn and apply a great deal of technical knowledge in a practical and creative context.",
+    "description": "Description",
+    "goal": "Goal"
   },
   "footer": {
     "desc": "Want something like this?",

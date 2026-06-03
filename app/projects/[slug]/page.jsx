@@ -169,9 +169,9 @@ function Page(props) {
     const params = use(props.params);
     const router = useRouter();
     const [data, setData] = useState(null);
-	const jsonData = useLanguage() === "es" ? projectES : projectEN;
-	const {t} = useLanguage(); 
+	const {t, language} = useLanguage(); 
     useEffect(() => {
+		const jsonData = language === "es" ? projectES : projectEN;
 		const selectedData = jsonData.Projects.find(
 			(item) => item.slug === params.slug
 		);
@@ -180,7 +180,7 @@ function Page(props) {
 		} else {
 			setData(selectedData);
 		}
-	}, [params.slug]);
+	}, [params.slug], language);
 
     if (data === "404") {
 		return (
@@ -335,7 +335,7 @@ function Page(props) {
 					</div>
 					<div className="flex justify-start items-start flex-col mb-5 md:col-start-2">
 						<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400 md:-mt-[200px]">
-							Goal
+							{t('projects.goal')}
 						</h2>
 						<p className="text-xl text-justify tracking-wide font-normal text-gray-400 mb-5 max-w-[1000px]">
 							{data.goal}

@@ -1,9 +1,9 @@
 import projectES from "@/json/dataES.json";
-import projectEN from "@/json/dataEN.json";
+import jsonData from "@/json/dataEN.json";
+import { useLanguage } from "@/context/LanguageContext";
 
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-	const jsonData = useLanguage() === "es" ? projectES : projectEN;
 	const project = jsonData.Projects.find((item) => item.slug === slug);
 
 	if (!project) {

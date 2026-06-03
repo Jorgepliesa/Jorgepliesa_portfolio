@@ -28,9 +28,9 @@ const category = {
 
 export default function Page() {
 	const [activeCategory, setActiveCategory] = useState(null);
-	const Projects = useLanguage() === "es" ? projectES : projectEN;
+	const {t, language} = useLanguage(); 
+	const Projects = language === "es" ? projectES : projectEN;
 	const projects = Projects.Projects.filter((item) => item.show === true);
-	const { t } = useLanguage();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
