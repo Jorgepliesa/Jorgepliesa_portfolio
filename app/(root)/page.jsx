@@ -70,7 +70,7 @@ const MyPage = () => {
 	return (
 		<FullPageWrapper>
 			<Section>
-				<div className="mx-auto w-[90%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-10 overflow-hidden">
+				<div className="mx-auto w-[90%] max-w-screen-2xl grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-10 overflow-hidden pt-16 md:pt-0">
 					<motion.div
 						className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
 						initial={{ x: -100, opacity: 0 }}
@@ -189,7 +189,7 @@ const MyPage = () => {
 			</Section>
 			<Section>
 				<div className="relative min-h-screen md:h-screen w-screen gap-8 md:gap-4 flex flex-col justify-start md:justify-center items-center overflow-hidden py-10 md:py-0">
-					<div className="z-0 relative md:absolute md:top-1/2 md:right-[10%] md:-translate-y-1/2">
+					<div className="z-10 relative md:absolute md:top-1/2 md:right-[10%] md:-translate-y-1/2">
 						<motion.div
 							className="relative bg-slate-300 rounded-sm h-[400px] md:h-[60vh] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
 							initial={{
