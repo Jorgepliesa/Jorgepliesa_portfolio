@@ -315,7 +315,7 @@ function Page(props) {
 							</Button>
 							<Button variation="secondary">
 									<a
-										href="https://jorgepliesa.itch.io/ascension"
+										href="https://jorgepliesa.itch.io/ascension?password=1234"
 										target="_blank"
 										rel="noopener noreferrer">
 										Play!
