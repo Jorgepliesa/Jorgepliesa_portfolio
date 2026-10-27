@@ -7,8 +7,8 @@ import projectEN from "@/json/dataEN.json";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faLinux, faWindows } from "@fortawesome/free-brands-svg-icons";
-import { faGamepad, faKeyboard, faArrowUpRightFromSquare, faChevronLeft, faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faLinux, faWindows, faAndroid, faApple } from "@fortawesome/free-brands-svg-icons";
+import { faGamepad, faKeyboard, faArrowUpRightFromSquare, faChevronLeft, faChevronDown, faChevronUp, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import NotFound from "@/app/not-found";
 import Image from "next/image";
 import BlurImage from "@/public/image/placeholder/blur.jpg";
@@ -21,7 +21,7 @@ function ProjectImage({ src, alt, index }) {
 	const handleLoad = useCallback(() => setLoaded(true), []);
 
 	return (
-		<div className="relative mb-5 max-w-7xl mx-auto w-full">
+		<div className="relative mb-5 max-w-7xl mx-auto w-full flex justify-center">
 			{!loaded && (
 				<div className="absolute inset-0 animate-pulse bg-neutral-800 rounded" />
 			)}
@@ -30,7 +30,7 @@ function ProjectImage({ src, alt, index }) {
 				alt={alt}
 				width={1920}
 				height={1080}
-				className={`h-auto w-full object-contain transition-opacity duration-500 rounded ${loaded ? "opacity-100" : "opacity-0"}`}
+				className={`h-auto w-auto max-w-full object-contain transition-opacity duration-500 rounded ${loaded ? "opacity-100" : "opacity-0"}`}
 				placeholder="blur"
 				blurDataURL={BlurImage.src}
 				loading={index === 0 ? "eager" : "lazy"}
@@ -73,14 +73,15 @@ function ImageCarousel({ images, altPrefix }) {
 	return (
 		<div className="relative w-full max-w-7xl mx-auto group">
 			<div className="overflow-hidden rounded bg-black">
+				{/* Sliding track */}
 				<div
 					className="flex transition-transform duration-500 ease-in-out"
 					style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
 					{images.map((img, i) => (
-						<div key={i} className="min-w-full flex-shrink-0 aspect-video relative overflow-hidden w-full flex items-center justify-center bg-black">
+						<div key={i} className="min-w-full flex-shrink-0 flex items-center justify-center bg-black overflow-hidden">
 							{isVideo(img) ? (
 								<video
-									className="block w-full h-full max-w-full object-contain"
+									className="block w-full max-h-[80vh] object-contain"
 									controls
 									preload="metadata"
 									onClick={(e => e.stopPropagation())}
@@ -89,9 +90,12 @@ function ImageCarousel({ images, altPrefix }) {
 									Your browser does not support the video tag.
 								</video>
 							) : (
-								<div className="w-full h-full relative flex items-center justify-center">
-									<ProjectImage src={img} alt={`${altPrefix} ${i + 1}`} index={10 + i} />
-								</div>
+								<img
+									src={img}
+									alt={`${altPrefix} ${i + 1}`}
+									className="block w-auto max-w-full max-h-[80vh] object-contain mx-auto"
+									loading={i === 0 ? "eager" : "lazy"}
+								/>
 							)}
 						</div>
 					))}
@@ -109,14 +113,13 @@ function ImageCarousel({ images, altPrefix }) {
 				<FontAwesomeIcon icon={faChevronLeft} className="rotate-180 text-[#39ff14]" />
 			</button>
 
-			<div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+			<div className="flex justify-center mt-4 space-x-2">
 				{images.map((_, i) => (
 					<button
 						key={i}
 						onClick={() => setCurrentIndex(i)}
-						className={`w-3 h-3 rounded-full transition-colors ${
-							currentIndex === i ? "bg-white" : "bg-white/50"
-						}`}
+						className={`w-3 h-3 rounded-full transition-colors ${currentIndex === i ? "bg-white" : "bg-white/50"
+							}`}
 						aria-label={`Go to slide ${i + 1}`}
 					/>
 				))}
@@ -126,53 +129,53 @@ function ImageCarousel({ images, altPrefix }) {
 }
 
 function ScrollDownButton() {
-  const [isAtBottom, setIsAtBottom] = useState(false);
+	const [isAtBottom, setIsAtBottom] = useState(false);
 
-  const handleScroll = () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (scrollTop < document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+	const handleScroll = () => {
+		const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		if (scrollTop < document.documentElement.scrollHeight - document.documentElement.clientHeight) {
 
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
-				setIsAtBottom(true);
+			window.scrollTo({
+				top: document.documentElement.scrollHeight,
+				behavior: "smooth",
+			});
+			setIsAtBottom(true);
 
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+		} else {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
 			setIsAtBottom(false);
-    }
-  };
+		}
+	};
 
-  return (
-    <div className="fixed bottom-5 left-0 right-0 flex justify-center items-center mb-10">
-      <motion.div
-        className="h-10 w-10 bg-neutral-900 rounded-full flex justify-center items-center cursor-pointer"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={handleScroll}
-      >
-        <FontAwesomeIcon
-          icon={isAtBottom ? faChevronUp : faChevronDown}
-          className="text-white text-2xl"
-        />
-      </motion.div>
-    </div>
-  );
+	return (
+		<div className="fixed bottom-5 left-0 right-0 flex justify-center items-center mb-10">
+			<motion.div
+				className="h-10 w-10 bg-neutral-900 rounded-full flex justify-center items-center cursor-pointer"
+				whileHover={{ scale: 1.1 }}
+				whileTap={{ scale: 0.9 }}
+				onClick={handleScroll}
+			>
+				<FontAwesomeIcon
+					icon={isAtBottom ? faChevronUp : faChevronDown}
+					className="text-white text-2xl"
+				/>
+			</motion.div>
+		</div>
+	);
 }
 
 
 function Page(props) {
-    const params = use(props.params);
-    const router = useRouter();
-    const [data, setData] = useState(null);
-	const {t, language} = useLanguage();
+	const params = use(props.params);
+	const router = useRouter();
+	const [data, setData] = useState(null);
+	const { t, language } = useLanguage();
 	const jsonData = language === "es" ? projectES : projectEN;
 	console.log("language en Page:", language);
-    useEffect(() => {
+	useEffect(() => {
 		setData(null);
 		const selectedData = jsonData.Projects.find(
 			(item) => item.slug === params.slug
@@ -184,7 +187,7 @@ function Page(props) {
 		}
 	}, [params.slug, language]);
 
-    if (data === "404") {
+	if (data === "404") {
 		return (
 			<>
 				<NotFound />
@@ -216,7 +219,7 @@ function Page(props) {
 			</div>
 		);
 	}
-    return (
+	return (
 		<div className="relative min-h-screen w-full gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
 			<button
 				onClick={() => router.back()}
@@ -229,7 +232,7 @@ function Page(props) {
 			</button>
 			<ScrollDownButton />
 			<div className="min-h-screen flex justify-center items-center">
-				<div className="mx-auto grid grid-cols-1 md:grid-cols-2  mt-10 md:mt-0">
+				<div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 mt-10 md:mt-0">
 					<div className="min-h-screen sm:min-h-0 flex justify-center items-start flex-col mb-5 space-y-10 mx-auto">
 						<div>
 							<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
@@ -302,28 +305,46 @@ function Page(props) {
 								{data.platforms.includes("windows") && <FontAwesomeIcon icon={faWindows} title="Windows" />}
 								{data.platforms.includes("gamepad") && <FontAwesomeIcon icon={faGamepad} title="Gamepad Support" />}
 								{data.platforms.includes("keyboard") && <FontAwesomeIcon icon={faKeyboard} title="Keyboard & Mouse Support" />}
+								{data.platforms.includes("web") && <FontAwesomeIcon icon={faGlobe} title="Web" />}
+								{data.platforms.includes("android") && <FontAwesomeIcon icon={faAndroid} title="Android" />}
+								{data.platforms.includes("ios") && <FontAwesomeIcon icon={faApple} title="iOS" />}
 							</div>
 						</div>
-						<div className="flex space-x-5">
-							<Button variation="primary">
+						{data.slug === 'Ascension' && (
+							<div className="flex space-x-5">
+								<Button variation="primary">
 									<Link
 										href={"/docs/GDD.pdf"}
 										target="_blank"
 										rel="noopener noreferrer">
 										View GDD
 									</Link>
-							</Button>
-							<Button variation="secondary">
+								</Button>
+								<Button variation="secondary">
 									<a
 										href="https://jorgepliesa.itch.io/ascension?password=1234"
 										target="_blank"
 										rel="noopener noreferrer">
 										Play!
 									</a>
-							</Button>
-						</div>
+								</Button>
+							</div>
+						)}
+						{data.zaguan && (
+							<div className="flex space-x-5">
+								<Button variation="primary">
+									<a
+										href={data.zaguan}
+										target="_blank"
+										rel="noopener noreferrer">
+										Ver TFG{" "}
+										<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="ml-2" />
+									</a>
+								</Button>
+							</div>
+						)}
 					</div>
-					<div className="flex justify-start items-start flex-col mb-5 ">
+					<div className="flex justify-start items-start flex-col mb-5">
 						<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
 							{t('projects.description')}
 						</h2>
@@ -336,14 +357,13 @@ function Page(props) {
 						))}
 					</div>
 					<div className="flex justify-start items-start flex-col mb-5 md:col-start-2">
-						<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400 md:-mt-[200px]">
+						<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
 							{t('projects.goal')}
 						</h2>
 						<p className="text-xl text-justify tracking-wide font-normal text-gray-400 mb-5 max-w-[1000px]">
 							{data.goal}
 						</p>
 					</div>
-					<div></div>
 				</div>
 			</div>
 
@@ -376,7 +396,8 @@ function Page(props) {
 							{section.title}
 						</h2>
 					</div>
-					<div className="w-full md:max-h-[600px] max-w-[800px] overflow-hidden rounded shadow-xl bg-black aspect-video relative flex justify-center items-center">
+					{/* Carousel — no fixed aspect-ratio so images show at their natural size */}
+					<div className="w-full max-w-[900px] rounded shadow-xl bg-black overflow-hidden">
 						<ImageCarousel images={section.images || (section.image ? [section.image] : [])} altPrefix={section.title} />
 					</div>
 					<div className="w-full flex justify-center items-center">
@@ -392,6 +413,19 @@ function Page(props) {
 					</div>
 				</div>
 			))}
+			{data.zaguan && (
+				<div className="flex space-x-5">
+					<Button variation="primary">
+						<a
+							href={data.zaguan}
+							target="_blank"
+							rel="noopener noreferrer">
+							Ver TFG{" "}
+							<FontAwesomeIcon icon={faArrowUpRightFromSquare} className="ml-2" />
+						</a>
+					</Button>
+				</div>
+			)}
 		</div>
 	);
 }

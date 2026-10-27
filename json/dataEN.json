@@ -49,7 +49,7 @@
           "title": "Football Gameplay & AI",
           "type": "text_image",
           "text": [
-           "A bit of gameplay footage is shown of the matches, where 4 players participate per team, although this is scalable, and they can perform 3 types of shots: normal, high, and curve, both for passing and shooting. They can also perform slide tackles to steal the ball. The statistics influence the player's speed, the probability of the shot going in the player's desired direction, etc. As the game progresses, the player's accuracy increases, and the opponents become stronger.",
+            "A bit of gameplay footage is shown of the matches, where 4 players participate per team, although this is scalable, and they can perform 3 types of shots: normal, high, and curve, both for passing and shooting. They can also perform slide tackles to steal the ball. The statistics influence the player's speed, the probability of the shot going in the player's desired direction, etc. As the game progresses, the player's accuracy increases, and the opponents become stronger.",
             "The AI ​​is managed with a state machine that allows it to adapt to different game situations, such as attacking, defending, counter-attacking, etc. In addition, each opponent has their own personality and playing style, which adds variety and challenge to the matches."
           ],
           "images": [
@@ -79,7 +79,7 @@
       "year": "2026",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/tfg/welcome.jpg",
+      "thumbnail": "/image/projects/tfg/logo.jpg",
       "images": [],
       "tech": [
         "React Native + Expo",
@@ -121,8 +121,7 @@
       "category": [
         9
       ],
-      "platforms": [
-      ],
+      "platforms": [],
       "trailer": "",
       "sections": []
     },
@@ -154,7 +153,7 @@
       "trailer": "",
       "sections": []
     },
-{
+    {
       "show": true,
       "title": "Simulation of MITM Attack & ARP Poisoning",
       "desc": [
@@ -175,8 +174,7 @@
       "category": [
         9
       ],
-      "platforms": [
-      ],
+      "platforms": [],
       "trailer": "",
       "sections": []
     }

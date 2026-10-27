@@ -58,7 +58,7 @@ For Spotify API setup, see [leerob.io/blog/spotify-api-nextjs](https://leerob.io
 ### Development
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 ### Production Build

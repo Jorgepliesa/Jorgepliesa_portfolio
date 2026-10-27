@@ -28,7 +28,7 @@ const category = {
 
 export default function Page() {
 	const [activeCategory, setActiveCategory] = useState(null);
-	const {t, language} = useLanguage(); 
+	const { t, language } = useLanguage();
 	const Projects = language === "es" ? projectES : projectEN;
 	const projects = Projects.Projects.filter((item) => item.show === true);
 
@@ -177,7 +177,7 @@ export default function Page() {
 							type: "spring",
 						}}>
 						<h2 className="text-2xl font-bold tracking-wider mb-3">
-							Ascension - Roguelike/Arcade Football Videogame 
+							Ascension - Roguelike/Arcade Football Videogame
 						</h2>
 						<p className="text-gray-400 text-justify body text-lg">
 							{t('projects.desc_highlight1')}
@@ -238,11 +238,10 @@ export default function Page() {
 					{Object.keys(category).map((key, index) => (
 						<button
 							key={index}
-							className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-gray-300 focus:text-black focus:ring focus:ring-slate-500 ${
-								activeCategory === key
-									? "bg-gray-300 text-black hover:bg-gray-700 hover:text-white"
-									: "bg-gray-700 text-white hover:bg-gray-300 hover:text-black"
-							}`}
+							className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-gray-300 focus:text-black focus:ring focus:ring-slate-500 ${activeCategory === key
+								? "bg-gray-300 text-black hover:bg-gray-700 hover:text-white"
+								: "bg-gray-700 text-white hover:bg-gray-300 hover:text-black"
+								}`}
 							onClick={() => setActiveCategory(activeCategory === key ? null : key)}>
 							{category[key]}
 						</button>
@@ -261,7 +260,7 @@ export default function Page() {
 				</div>
 
 				{/* view in archive btn */}
-				{/*<motion.div
+				{<motion.div
 					initial={{
 						opacity: 0,
 					}}
@@ -272,7 +271,7 @@ export default function Page() {
 					<Button variation="primary">
 						<Link href="projects/archive">View In Archive</Link>
 					</Button>
-				</motion.div>*/}
+				</motion.div>}
 			</main>
 		</>
 	);

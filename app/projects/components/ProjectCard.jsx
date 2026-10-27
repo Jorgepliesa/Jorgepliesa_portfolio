@@ -8,7 +8,7 @@ export default function ProjectCard({ project, index, activeCategory }) {
 	return (
 		<>
 			{(activeCategory === null || project.category.includes(parseInt(activeCategory))) && (
-				//<Link href={"projects/" + project.slug} key={index}>
+				<Link href={"/projects/" + project.slug} className="w-full">
 					<motion.div
 						className="z-10 relative flex justify-center items-start flex-col mb-5 md:px-10 w-full h-auto bg-gray-400 group/tes py-20 px-5 md:py-2 aspect-video "
 						initial={{
@@ -51,7 +51,7 @@ export default function ProjectCard({ project, index, activeCategory }) {
 							</div>
 						</div>
 					</motion.div>
-				//</Link>
+				</Link>
 			)}
 		</>
 	);

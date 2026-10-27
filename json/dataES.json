@@ -70,33 +70,133 @@
     },
     {
       "show": true,
-      "title": "TFG: Fitness Game ",
+      "title": "TFG: Health Game ",
       "desc": [
         "App híbrida gamificada para la motivación de actividad física adaptada en supervivientes de cáncer pediátrico.",
-        "La baja adherencia a la actividad física en pacientes supervivientes de cáncer pediátrico puede ser un factor crítico para su recuperación, pronóstico y calidad de vida a largo plazo. Por ello, se persigue favorecer la adherencia a la actividad física adaptándose a la condición física del menor y a su progresión individual, mediante la gamificación e intervención digital. Se desarrollará un modelo para la creación de rutinas personalizada junto con otro modelo ya existente compatible con datos clínicos estandarizados extraídos de sensores. Además permitirá ver la trazabilidad y ser monitorizado por los responsables sanitarios o los tutores legales."
+        "La baja adherencia a la actividad física en pacientes supervivientes de cáncer pediátrico puede ser un factor crítico para su recuperación, pronóstico y calidad de vida a largo plazo. Por ello, se persigue favorecer la adherencia a la actividad física adaptándose a la condición física del menor y a su progresión individual, mediante la gamificación e intervención digital. Ofrece un modelo de rutinas personalizadas para cada usuario junto con otro modelo ya existente compatible con datos clínicos estandarizados (OMOP CDM) extraídos de sensores. Además permite ver la trazabilidad y ser monitorizado por los responsables sanitarios o los tutores legales."
       ],
-      "goal": "",
+      "goal": "El objetivo de este proyecto es favorecer la adherencia a la actividad física en pacientes supervivientes de cáncer pediátrico, entre 5-12 años, adaptándose a su condición física y progresión individual a través del uso de la gamificación y la supervisión continuada y personalizada.",
       "year": "2026",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/tfg/welcome.jpg",
+      "zaguan": "https://zaguan.unizar.es",
+      "thumbnail": "/image/projects/tfg/logo.jpg",
       "images": [],
       "tech": [
         "React Native + Expo",
         "NestJS + Express",
         "PostgreSQL + TimeScaleDB",
-        "Web & Mobile"
+        "Web & Mobile",
+        "TypeORM",
+        "Swagger",
+        "Docker"
       ],
-      "slug": "FitnessApp",
+      "slug": "HealthGame",
       "category": [
         1
       ],
       "platforms": [
         "web",
-        "mobile"
+        "mobile",
+        "ios",
+        "android"
       ],
       "trailer": "",
-      "sections": []
+      "sections": [
+        {
+          "title": "El problema y por qué crear desde cero",
+          "type": "text_image",
+          "text": [
+            "La baja adherencia a la actividad física en niños y niñas supervivientes de cáncer tiene causas físicas, sociales y psicológicas, y afecta a su recuperación y a su calidad de vida a largo plazo. Este proyecto nace en el contexto de ASPANOA con un objetivo claro: que la aplicación pueda llegar a usarse en la práctica, no quedarse en un prototipo.",
+            "Antes de empezar hice un estado del arte y organicé lo existente en tres grupos: apps oncológicas para adultos (sin gamificación ni enfoque infantil), apps de fitness infantil (no orientadas a supervivientes de cáncer) y proyectos oncológicos, algunos con gamificación, pero no centrados en la actividad física. Ninguno cruza a la vez población pediátrica oncológica, gamificación y actividad física.",
+            "Ese hueco es el que cubre Health Game: una app para niños de 5 a 12 años que usa la gamificación y la supervisión continuada para que el ejercicio se convierta en un hábito, y que sirve de trampolín hacia la autodeterminación del menor."
+          ],
+          "images": [
+            "/image/projects/tfg/aspanoa.png",
+            "/image/projects/tfg/estado_arte.png"
+          ]
+        },
+        {
+          "title": "Gamificación",
+          "type": "text_image",
+          "text": [
+            "El diseño parte de las tres necesidades psicológicas básicas de la teoría de la autodeterminación. Autonomía: el niño decide cómo personalizar su avatar y qué rutinas hacer. Competencia: desbloquea contenido al cumplir retos y se premia la constancia. Relación social: las rutinas en equipo y los retos comunitarios dan un objetivo común.",
+            "Los Puntos de Esfuerzo (PE) son la moneda del juego: se ganan al completar rutinas y con una recompensa diaria por entrar en la app. Se gastan en una tienda de cosméticos con siete categorías para equipar al avatar, con previsualización antes de confirmar.",
+            "En los retos cooperativos, la app recoge los pasos de los wearables y todos los usuarios los suman para derrotar a un jefe final. Al lograrlo, cada participante recibe un cromo educativo que explica una curiosidad fisiológica sobre el ejercicio, y los guarda en un álbum. Además, cada sesión se puede hacer en compañía a cambio de más puntos, reforzando la interacción social."
+          ],
+          "images": [
+            "/image/projects/tfg/bonus_diario.jpg",
+            "/image/projects/tfg/tienda.mp4",
+            "/image/projects/tfg/reto_coop.jpg",
+            "/image/projects/tfg/album.mp4",
+            "/image/projects/tfg/rutina_equipo.jpg"
+          ]
+        },
+        {
+          "title": "Ejercicios y rutinas adaptadas",
+          "type": "text_image",
+          "text": [
+            "Cada sesión empieza con un test de bienestar (dolor, fatiga, sueño y ánimo, de 1 a 5, con caras), sigue con ejercicios guiados con vídeo, temporizador y descansos, y termina con un segundo test. Los ejercicios se ordenan en calentamiento, bloque principal y estiramientos.",
+            "La app no genera rutinas desde cero. Los profesionales sanitarios añaden un catálogo amplio de rutinas y la aplicación filtra y ofrece la más adecuada para cada usuario. Así el contenido sigue validado clínicamente y no depende de un algoritmo que pueda equivocarse al diseñar el ejercicio de un niño. Los supervisores pueden además crear, editar y eliminar rutinas propias para cada usuario, y los ejercicios contraindicados según su perfil clínico se excluyen automáticamente.",
+            "El algoritmo de recomendación funciona en cuatro fases. 1) Filtra por material disponible. 2) Calcula la dificultad objetivo con una métrica subjetiva (dolor y fatiga del último test: alto baja un nivel, bajo sube uno) y otra objetiva (tasa de finalización de repeticiones: menos del 60% baja, más del 90% sube). 3) Puntúa cada rutina candidata: coincidencia de dificultad (0, 2 o 4 puntos), rotación de categoría (+2), material (+1) y penalización de 3 puntos por cada repetición reciente. 4) Devuelve la rutina ganadora junto con el desglose de puntos de todas, para que un supervisor pueda auditar la decisión."
+          ],
+          "images": [
+            "/image/projects/tfg/ejercicios.mp4",
+            "/image/projects/tfg/trazabilidad.png"
+          ]
+        },
+        {
+          "title": "Panel de supervisión",
+          "type": "text_image",
+          "text": [
+            "Los responsables sanitarios, tutores legales o profesionales de la actividad física acceden a un panel protegido por contraseña. Desde él consultan y editan los datos clínicos del menor, añaden notas de observación, gestionan sus rutinas y visualizan su evolución.",
+            "La visualización combina datos de la app y de los sensores: pasos diarios, racha semanal, sesiones por tipo, adherencia mensual con semáforo, bienestar medio de las últimas 4 semanas, evolución del ánimo en seis meses, comparativa de bienestar antes y después de la última sesión y frecuencia cardiaca durante los entrenamientos. También se puede exportar un informe en PDF."
+          ],
+          "images": [
+            "/image/projects/tfg/panel_parental.jpg",
+            "/image/projects/tfg/datos_clinicos.jpg",
+            "/image/projects/tfg/nueva_rutina.jpg",
+            "/image/projects/tfg/grafico1.jpg",
+            "/image/projects/tfg/grafico2.jpg",
+            "/image/projects/tfg/grafico4.jpg",
+            "/image/projects/tfg/grafico5.jpg",
+            "/image/projects/tfg/grafico3.jpg"
+          ]
+        },
+        {
+          "title": "Arquitectura",
+          "type": "text_image",
+          "text": [
+            "La aplicación sigue una arquitectura cliente-servidor. El cliente está hecho con React Native y Expo, con un único código para Android, iOS y web. El backend es una API REST con NestJS y TypeORM, con autenticación JWT y documentación Swagger, y se comunica con el cliente por HTTPS.",
+            "La base de datos, PostgreSQL con TimescaleDB en Docker, tiene dos esquemas a los que accede el backend con dos conexiones. El esquema público es el propio de la aplicación: usuarios, sesiones, información clínica y elementos de gamificación. El esquema OMOP CDM recibe los datos ya procesados de otra aplicación, desarrollada en un trabajo anterior, que extrae los datos de los sensores wearables.",
+            "Mantener ambos esquemas separados permite que los datos de sensores sigan un estándar de interoperabilidad, listos para integrarse en ecosistemas de salud digital más amplios, sin mezclar su modelo con la lógica de juego. TimescaleDB, además, es adecuado para las series temporales que generan los sensores."
+          ],
+          "images": [
+            "/image/projects/tfg/arquitectura.png",
+            "/image/projects/tfg/BBDD.png"
+          ]
+        },
+        {
+          "title": "Validación y verificación",
+          "type": "text_image",
+          "text": [
+            "Para comprobar que el sistema está bien construido (verificación) y que cumple su propósito (validación) se hicieron varios niveles de prueba. Las pruebas unitarias con Jest, 72 de 72, cubren la lógica de dominio, como el algoritmo de recomendación, la adherencia o las sesiones. Las 6 pruebas de integración e2e también se superaron.",
+            "En rendimiento, con Autocannon sobre endpoints ligeros, medios y pesados, se obtuvieron 0 errores y un percentil 99 de latencia inferior a 30 ms. En usabilidad se completaron con éxito los 10 casos de uso definidos, y 4 de ellos se validaron de extremo a extremo sobre datos sintéticos."
+          ],
+          "images": [
+            "/image/projects/tfg/tabla_validacion.png"
+          ]
+        },
+        {
+          "title": "Conclusiones y trabajo futuro",
+          "type": "text_image",
+          "text": [
+            "Health Game aporta una combinación de gamificación, rutinas personalizadas con supervisión clínica, uso de un estándar clínico (OMOP CDM) y una aplicación híbrida accesible desde móvil y web.",
+            "Como trabajo futuro quedan la validación clínica con pacientes reales, ampliar el componente lúdico y la integración directa con los wearables, sin depender de una aplicación intermedia."
+          ],
+          "images": []
+        }
+      ]
     },
     {
       "show": true,
@@ -122,8 +222,7 @@
       "category": [
         9
       ],
-      "platforms": [
-      ],
+      "platforms": [],
       "trailer": "",
       "sections": []
     },
@@ -155,7 +254,7 @@
       "trailer": "",
       "sections": []
     },
-{
+    {
       "show": true,
       "title": "Simulación ataque MITM & ARP Poisoning",
       "desc": [
@@ -176,8 +275,7 @@
       "category": [
         9
       ],
-      "platforms": [
-      ],
+      "platforms": [],
       "trailer": "",
       "sections": []
     }
